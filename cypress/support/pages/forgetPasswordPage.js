@@ -1,4 +1,4 @@
-    let el = require('../elements/esqueciMinhaSenhaElements').RESET_PASSWORD
+    let el = require('../elements/forgetPasswordElements').RESET_PASSWORD
     const {click, set, get_text, click_index} = require('../actions');
     
     export default {
@@ -8,19 +8,19 @@
             }
         },
 
-        clicarResetPassword() {
+        clickResetPassword() {
             click(el.btnSubmit)
         },
 
-        clicarBotaoCancel() {
+        clickCancel() {
             click_index(el.btnCancel, 0)
         },
     
-        validaReseteSenhaPage() {
+        validatePasswordResetPageTitle() {
             return get_text(el.validaTitleReset)
         },
 
-        validaAlertRequired() {
+        validateRequiredAlert() {
             return get_text(el.msgRequired)
         }
     }

@@ -24,7 +24,7 @@ export default {
         click(el.btnLogin)
     },
 
-    clicarEsqueciMinhaSenha() {
+    clickForgetPassword() {
         click(el.linkForgetPass)
     },
 
