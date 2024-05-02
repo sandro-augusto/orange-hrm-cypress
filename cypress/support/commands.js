@@ -1,4 +1,7 @@
-// var el = require('./elements/homeElements').CADASTRO
+var el = require('../support/elements/loginElements').LOGIN
+import login from "../support/pages/loginPage"
+import home from "../support/pages/homePage"
+
 // import 'cypress-file-upload';
 
 
@@ -7,9 +10,19 @@
     
 //   })
 
-//   Cypress.Commands.add('ValidaMensage', () => {
-//     cy.get(el.ValidaMensage)
-//   })
+  Cypress.Commands.add('LoginSucesso', () => {
+    login.acessarPage()
+    login.validaLoginPage()
+    login.preencheLogin('Admin', 'admin123')
+    login.clicarLogin()
+    home.validaHome().then((mensagem) => {
+    console.log(mensagem)
+    expect(mensagem).to.eq('Punched Out')
+    })
+    home.validaURLHome().then((urlAtual) => {
+    expect(urlAtual).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
+    })
+  })
 
 //   Cypress.Commands.add('pagCadastro', () => {
 //     cy.ValidaMensage().should('be.visible').should('have.text', 'Cuidado e diversão em cada passo')
