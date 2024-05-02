@@ -1,4 +1,4 @@
-export const RESET_PASSWORD = { 
+export const FORGET_PASSWORD = { 
     titleResetPage: 'div h6',
     inputUsername: 'input[name="username"]',
     btnSubmit: 'button[type="submit"]',

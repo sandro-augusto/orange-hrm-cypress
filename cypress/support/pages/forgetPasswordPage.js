@@ -1,4 +1,4 @@
-    let el = require('../elements/forgetPasswordElements').RESET_PASSWORD
+    let el = require('../elements/forgetPasswordElements').FORGET_PASSWORD
     const {click, set, get_text, click_index} = require('../actions');
     
     export default {
