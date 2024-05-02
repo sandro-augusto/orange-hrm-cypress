@@ -1,4 +1,3 @@
-    /// <reference types="cypress" />
 let el = require('../elements/loginElements').LOGIN
 const {click, set, carregaPage, waitElement, get_text_index, get_text } = require('../actions');
 
@@ -23,6 +22,10 @@ export default {
 
     clicarLogin() {
         click(el.btnLogin)
+    },
+
+    clicarEsqueciMinhaSenha() {
+        click(el.linkForgetPass)
     },
 
     validaMensErro() {
