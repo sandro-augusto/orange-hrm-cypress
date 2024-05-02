@@ -2,7 +2,7 @@
     const {click, set, get_text, click_index} = require('../actions');
     
     export default {
-        preencheResetPassword(username) {
+        fillInUsername(username) {
             if (username !== null) {
                 set(el.inputUsername, username);
             }
@@ -17,7 +17,7 @@
         },
     
         validatePasswordResetPageTitle() {
-            return get_text(el.validaTitleReset)
+            return get_text(el.titleResetPage)
         },
 
         validateRequiredAlert() {

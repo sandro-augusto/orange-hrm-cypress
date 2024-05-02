@@ -14,7 +14,7 @@ describe("Validate or forgot my password", () => {
         console.log(mensagem)
         expect(mensagem).to.eq("Reset Password")
       })
-      resetPassword.preencheResetPassword("usernameTeste")
+      resetPassword.fillInUsername("usernameTeste")
       resetPassword.clickResetPassword()
       resetPassword.validatePasswordResetPageTitle().then((mensagem) => {
         expect(mensagem).to.eq("Reset Password link sent successfully")
@@ -27,7 +27,7 @@ describe("Validate or forgot my password", () => {
         console.log(mensagem)
         expect(mensagem).to.eq("Reset Password")
       })
-      resetPassword.preencheResetPassword(null)
+      resetPassword.fillInUsername(null)
       resetPassword.clickResetPassword()
       resetPassword.validateRequiredAlert().then((mensagem) => {
         expect(mensagem).to.eq("Required")

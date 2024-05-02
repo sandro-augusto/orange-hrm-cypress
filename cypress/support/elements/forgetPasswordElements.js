@@ -1,5 +1,5 @@
 export const RESET_PASSWORD = { 
-    validaTitleReset: 'div h6',
+    titleResetPage: 'div h6',
     inputUsername: 'input[name="username"]',
     btnSubmit: 'button[type="submit"]',
     msgRequired: 'div span',
