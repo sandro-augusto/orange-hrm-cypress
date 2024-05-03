@@ -24,10 +24,10 @@ import home from "../support/pages/homePage"
     })
   })
 
-//   Cypress.Commands.add('pagCadastro', () => {
-//     cy.ValidaMensage().should('be.visible').should('have.text', 'Cuidado e diversão em cada passo')
-//     cy.get(el.btLogin).click()
-//   })
+  Cypress.Commands.add('pagCadastro', () => {
+    cy.ValidaMensage().should('be.visible').should('have.text', 'Cuidado e diversão em cada passo')
+    cy.get(el.btLogin).click()
+  })
   
 //   Cypress.Commands.add('DadosPessoais', (nome, email, cpf) => {
 //     if (nome !== null) {
