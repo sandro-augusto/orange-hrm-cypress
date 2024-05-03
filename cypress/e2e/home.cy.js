@@ -105,15 +105,6 @@ describe('Validar a HomePage ', () => {
                 expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz')
             })
         })
-
-        Context('Pesquisas', () => {
-
-
-
-
-        })
-
-
-
+    
     })
 })
