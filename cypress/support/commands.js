@@ -9,7 +9,7 @@ import home from "../support/pages/homePage"
 //     cy.visit(el.url)
     
 //   })
-
+// #Login com sucesso
   Cypress.Commands.add('LoginSucesso', () => {
     login.acessarPage()
     login.validaLoginPage()
