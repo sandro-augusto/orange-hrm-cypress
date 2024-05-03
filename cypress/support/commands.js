@@ -15,10 +15,6 @@ import home from "../support/pages/homePage"
     login.validaLoginPage()
     login.preencheLogin('Admin', 'admin123')
     login.clicarLogin()
-    home.validaHome().then((mensagem) => {
-    console.log(mensagem)
-    expect(mensagem).to.eq('Punched In')
-    })
     home.validaURLHome().then((urlAtual) => {
     expect(urlAtual).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
     })

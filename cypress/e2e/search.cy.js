@@ -8,8 +8,8 @@ describe('Validate menu search', () => {
         })
         
         it('Search by admin', () => {
-            homePage.fillInSearch("Admin")
-            homePage.validateResultSearch().then((mensagem) => {
+            
+            homePage.validateResultSearch('Admin').then((mensagem) => {
                 expect(mensagem).to.eq("Admin")
             })
         })
