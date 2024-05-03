@@ -1,13 +1,15 @@
 
 
-describe('', () => {
+describe('Admin', () => {
 
-    context('',() => {
+    context('Acessar a Página do Orange HRM para realizar as validações de admin',() => {
         beforeEach(() => {
             login.acessarPage()
             login.validaLoginPage()
         });
     
-        it('', () => {
+        it('Adicionar um admin com sucesso', () => {
         
         })
+    })
+})
