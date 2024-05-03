@@ -6,5 +6,6 @@ export const LOGIN = {
         btnLogin: '.orangehrm-login-button',
         validaLogin: '.orangehrm-login-logo',
         validaMensErro: '.oxd-input-field-error-message',
-        alertErro: '.oxd-alert-content-text'
+        alertErro: '.oxd-alert-content-text',
+        linkForgetPass: '.orangehrm-login-forgot'
 }

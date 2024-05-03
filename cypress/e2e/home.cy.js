@@ -1,5 +1,4 @@
 import homePage from "../support/pages/homePage";
-import loginPage from "../support/pages/loginPage";
 
 describe('Validar a HomePage ', () => {
 
@@ -105,6 +104,13 @@ describe('Validar a HomePage ', () => {
             homePage.validaUrlAdmin().then((url) => {
                 expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz')
             })
+        })
+
+        Context('Pesquisas', () => {
+
+
+
+
         })
 
 

@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 let el = require('../elements/cadastroElements').CADASTRO
 const { set, click, get_text, click_text} = require('../actions');
 
