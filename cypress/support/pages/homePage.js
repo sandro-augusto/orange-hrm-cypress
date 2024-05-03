@@ -1,5 +1,6 @@
 let el = require('../elements/homeElements').HOME
-const { get_text, get_text_index, click, click_index } = require('../actions');
+let element = require('../elements/searchElements').SEARCH
+const { get_text, get_text_index, click, click_index, set } = require('../actions');
 
 export default {
 
@@ -56,10 +57,12 @@ export default {
 
     validaUrlAdmin() {
         return cy.url()
-    }
+    },
 
-
-
-
+    validateResultSearch(menu) {
+        set(element.inputSearch, menu)
+        return get_text(element.resultSearch)
+    } 
 }
+
 
