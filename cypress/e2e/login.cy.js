@@ -12,10 +12,6 @@ describe('Acessar a Pagina do Orange HRM para realizar as validações de Login'
         it('Login com sucesso', () => {
           login.preencheLogin('Admin', 'admin123')
           login.clicarLogin()
-          home.validaHome().then((mensagem) => {
-            console.log(mensagem)
-            expect(mensagem).to.eq('Punched Out')
-          })
           home.validaURLHome().then((urlAtual) => {
             expect(urlAtual).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
           })

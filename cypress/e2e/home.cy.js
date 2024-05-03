@@ -106,14 +106,5 @@ describe('Validar a HomePage ', () => {
             })
         })
 
-        Context('Pesquisas', () => {
-
-
-
-
-        })
-
-
-
     })
 })
