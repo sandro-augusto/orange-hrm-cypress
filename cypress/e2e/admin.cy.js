@@ -1,15 +1,19 @@
-
+import homePage from "../support/pages/homePage";
+import adminPage from "../support/pages/adminPage";
 
 describe('Admin', () => {
 
-    context('Acessar a Página do Orange HRM para realizar as validações de admin',() => {
+    context('Admin validações',() => {
         beforeEach(() => {
-            login.acessarPage()
-            login.validaLoginPage()
-        });
+            cy.LoginSucesso()
+        })
     
         it('Adicionar um admin com sucesso', () => {
-        
+            homePage.ValidarOpcoesMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            // adminPage.preencheUsername("Teste")
+            adminPage.clickSearch()
+            })
         })
     })
 })
