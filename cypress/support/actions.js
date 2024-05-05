@@ -11,7 +11,7 @@ function waitElement(el) {
 
 function waitElement_index(el, index) {
     try {
-        cy.log('Aguardando o elemento ' + el + 'o Index ' + index + 'está visível')
+        cy.log('Aguardando o elemento ' + el + 'o Index ' + index + ' está visível')
         cy.get(el).eq(index, {timeout: 10000} )
         cy.log('Encontrou o elemento ' + el)
     } catch (error) {
@@ -42,6 +42,17 @@ function set(el, text) {
     return set;
 }
 
+function set_Index(el, index, text) {
+    waitElement(el)
+    try {
+        cy.get(el).eq(index).type(text)
+        cy.log('Setou as informações no ' + el + ' com o index ' + index)
+    } catch (error) {
+        cy.log('Exceção capturada: ' + error.message);
+    }
+    return set_Index;
+}
+
 function click(el) {
     waitElement(el)
     try {
@@ -53,11 +64,33 @@ function click(el) {
     return click;
 }
 
+function clickForce(el) {
+    waitElement(el)
+    try {
+        cy.get(el).click({force: true});
+        cy.log('Clicou no Elemento ' + el)
+    } catch (error) {
+        cy.log('Exceção capturada: ' + error.message);
+    }
+    return click;
+}
+
 function click_index(el, index) {
     waitElement_index(el, index)
     try {
         cy.get(el).eq(index).click();
-        cy.log('Clicou no Elemento ' + el + ' no Index' + index)
+        cy.log('Clicou no Elemento ' + el + ' no Index ' + index)
+    } catch (error) {
+        cy.log('Exceção capturada: ' + error.message);
+    }
+    return click_index;
+}
+
+function click_indexForce(el, index) {
+    waitElement_index(el, index)
+    try {
+        cy.get(el).eq(index).click( {force: true} );
+        cy.log('Clicou no Elemento ' + el + ' no Index ' + index)
     } catch (error) {
         cy.log('Exceção capturada: ' + error.message);
     }
@@ -160,5 +193,5 @@ function splitIn(el, index) {
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, carregaPage
+            click_text, carregaPage, set_Index, clickForce, click_indexForce
 };

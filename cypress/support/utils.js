@@ -36,6 +36,16 @@ const cancelCallAPI = () => {
     }
 }
 
+const validarElNaoVisiveis = () => {
+    cy.document().then((doc) => {
+        const elementosVisiveis = Array.from(doc.querySelectorAll('*')).filter((el) => {
+          const style = getComputedStyle(el);
+          return el.offsetWidth > 0 && el.offsetHeight > 0 && style.visibility !== 'hidden' && style.display !== 'none';
+        });
+        console.log(elementosVisiveis);
+    });
+}
+
 module.exports = {
-    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload
+    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, validarElNaoVisiveis
 };
