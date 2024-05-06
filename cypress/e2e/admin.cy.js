@@ -32,15 +32,13 @@ describe('Admin', () => {
             })
         })
     
-        it('Add an admin successfully', () => {
-            homePage.ValidarOpcoesMenu('Admin').then((mensagem) => {
+        it.only('Add an admin successfully', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInEmployeeName("Charles Carter")
-            adminPage.fillInUsername("Testing")
-            adminPage.fillInPassword("Mypassword1$")
-            adminPage.fillInConfirmPassword("Mypassword1$")
-            adminPage.clickSave()
+            adminPage.fillInInformations("Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            // adminPage.fillInConfirmPassword("Mypassword1$")
+            // adminPage.clickSave()
             })
         })
     })

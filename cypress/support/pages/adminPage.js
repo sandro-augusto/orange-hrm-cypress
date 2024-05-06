@@ -6,9 +6,21 @@ const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
 export default {
 
     
-    fillUsername(username) {
+    fillInInformations(username, employeeName, password, confirmPassword) {
         if (username !== null) {
-            set(el.inputUser, username);
+            set_Index(el.inputUser, username, 1);
+        }
+
+        if (employeeName !== null) {
+            set(el.inputEmployeeName, employeeName)
+        }
+
+        if (password !== null) {
+            set_Index(el.inputUser, password, 2)
+        }
+
+        if (confirmPassword !== null) {
+            set_Index(el.inputUser, confirmPassword, 3)
         }
     },
 
@@ -49,7 +61,7 @@ export default {
     },
 
     clickAdd() {
-        click_index(el.buttonSearch, 2)
+        click(el.btnAdd)
     },
 
     clickReset() {

@@ -42,7 +42,7 @@ function set(el, text) {
     return set;
 }
 
-function set_Index(el, index, text) {
+function set_Index(el, text, index) {
     waitElement(el)
     try {
         cy.get(el).eq(index).type(text)
