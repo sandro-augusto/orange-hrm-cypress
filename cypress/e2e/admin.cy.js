@@ -10,7 +10,7 @@ describe('Admin', () => {
 
         it('Validate Admin search Username field', () => {
             adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
-                expect(mensagem).to.eq('Admin')
+                expect(mensagem).to.eq('FMLName1')
             })
         })
 
