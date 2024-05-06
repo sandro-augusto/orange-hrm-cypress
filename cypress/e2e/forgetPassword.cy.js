@@ -4,8 +4,8 @@ import resetPassword from "../support/pages/forgetPasswordPage";
 describe("Validate or forgot my password", () => {
   context("Forgot my password", () => {
     beforeEach(() => {
-      login.acessarPage()
-      login.validaLoginPage()
+      login.accessPage()
+      login.validateLoginPage()
     })
 
     it("Forgot my password with success", () => {
@@ -41,7 +41,7 @@ describe("Validate or forgot my password", () => {
         expect(mensagem).to.eq("Reset Password")
       })
       resetPassword.clickCancel()
-      login.validaLoginPage()
+      login.validateLoginPage()
     })
   })
 })

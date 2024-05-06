@@ -8,7 +8,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Admin do Menu', () => {
-            homePage.ValidarOpcoesMenu('Admin').then((mensagem) => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -17,7 +17,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção PIM do Menu', () => {
-            homePage.ValidarOpcoesMenu('PIM').then((mensagem) => {
+            homePage.ValidateOptionMenu('PIM').then((mensagem) => {
                 expect(mensagem).to.eq('Employee Information')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -26,7 +26,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Leave do Menu', () => {
-            homePage.ValidarOpcoesMenu('Leave').then((mensagem) => {
+            homePage.ValidateOptionMenu('Leave').then((mensagem) => {
                 expect(mensagem).to.eq('Leave List')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -35,7 +35,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Time do Menu', () => {
-            homePage.ValidarOpcoesMenu('Time').then((mensagem) => {
+            homePage.ValidateOptionMenu('Time').then((mensagem) => {
                 expect(mensagem).to.eq('Select Employee')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -44,7 +44,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Recruitment do Menu', () => {
-            homePage.ValidarOpcoesMenu('Recruitment').then((mensagem) => {
+            homePage.ValidateOptionMenu('Recruitment').then((mensagem) => {
                 expect(mensagem).to.eq('Candidates')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -53,7 +53,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Performance do Menu', () => {
-            homePage.ValidarOpcoesMenu('Performance').then((mensagem) => {
+            homePage.ValidateOptionMenu('Performance').then((mensagem) => {
                 expect(mensagem).to.eq('Employee Reviews')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -62,7 +62,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção DashBoard do Menu', () => {
-            homePage.ValidarOpcoesMenu('DashBoard').then((mensagem) => {
+            homePage.ValidateOptionMenu('DashBoard').then((mensagem) => {
                 expect(mensagem).to.eq('Time at Work')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -71,7 +71,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Directory do Menu', () => {
-            homePage.ValidarOpcoesMenu('Directory').then((mensagem) => {
+            homePage.ValidateOptionMenu('Directory').then((mensagem) => {
                 expect(mensagem).to.eq('Directory')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -80,7 +80,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Maintenance do Menu', () => {
-            homePage.ValidarOpcoesMenu('Maintenance').then((mensagem) => {
+            homePage.ValidateOptionMenu('Maintenance').then((mensagem) => {
                 expect(mensagem).to.eq('Administrator Access')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -89,7 +89,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Claim do Menu', () => {
-            homePage.ValidarOpcoesMenu('Claim').then((mensagem) => {
+            homePage.ValidateOptionMenu('Claim').then((mensagem) => {
                 expect(mensagem).to.eq('Employee Claims')
             })
             homePage.validaUrlAdmin().then((url) => {
@@ -98,7 +98,7 @@ describe('Validar a HomePage ', () => {
         })
 
         it('Validar a opção Buzz do Menu', () => {
-            homePage.ValidarOpcoesMenu('Buzz').then((mensagem) => {
+            homePage.ValidateOptionMenu('Buzz').then((mensagem) => {
                 expect(mensagem).to.eq('Buzz Newsfeed')
             })
             homePage.validaUrlAdmin().then((url) => {

@@ -2,25 +2,25 @@ let el = require('../elements/loginElements').LOGIN
 const {click, set, carregaPage, waitElement, get_text_index, get_text } = require('../actions');
 
 export default {
-    acessarPage() {
+    accessPage() {
         // Para usar as url's dos ambientes tem que deixar apenas a "/"
         carregaPage(el.url)
     },
 
-    preencheLogin(username, senha) {
+    fillLogin(username, password) {
         if (username !== null) {
             set(el.username, username);
         }
-        if (senha !== null) {
-            set(el.senha, senha);
+        if (password !== null) {
+            set(el.password, password);
         }
     },
 
-    validaLoginPage() {
-        return waitElement(el.validaLogin)
+    validateLoginPage() {
+        return waitElement(el.validateLogin)
     },
 
-    clicarLogin() {
+    clickLogin() {
         click(el.btnLogin)
     },
 
@@ -28,15 +28,15 @@ export default {
         click(el.linkForgetPass)
     },
 
-    validaMensErro() {
-        return get_text_index(el.validaMensErro, 0)
+    validateMessError() {
+        return get_text_index(el.validateMessError, 0)
     },
 
-    validaMensErro2() {
-        return get_text_index(el.validaMensErro, 1)
+    validateMessError2() {
+        return get_text_index(el.validateMessError, 1)
     },
 
-    validaAlertaErro() {
+    validateAlertError() {
         return get_text(el.alertErro)
     }
 }

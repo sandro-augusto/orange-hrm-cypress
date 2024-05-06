@@ -36,16 +36,26 @@ const cancelCallAPI = () => {
     }
 }
 
-const validarElNaoVisiveis = () => {
+const validateElNotVisible = () => {
     cy.document().then((doc) => {
-        const elementosVisiveis = Array.from(doc.querySelectorAll('*')).filter((el) => {
+        const visibleElements = Array.from(doc.querySelectorAll('*')).filter((el) => {
           const style = getComputedStyle(el);
           return el.offsetWidth > 0 && el.offsetHeight > 0 && style.visibility !== 'hidden' && style.display !== 'none';
         });
-        console.log(elementosVisiveis);
+        console.log(visibleElements);
     });
 }
 
+const pressEnter = (el) => {
+    cy.get(el).type('{ENTER}')
+}
+
+const pressEnterIndex = (el, index) => {
+    cy.get(el).eq(index).type('{ENTER}')
+}
+
+
 module.exports = {
-    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, validarElNaoVisiveis
+    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, validateElNotVisible,
+    pressEnter, pressEnterIndex
 };

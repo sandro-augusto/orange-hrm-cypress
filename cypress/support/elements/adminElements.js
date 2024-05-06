@@ -1,10 +1,11 @@
 export const ADMIN = {
    inputUser: '.oxd-input',
-   campoSelect: '.oxd-select-text-input',
-   opcoesSelect: '.oxd-select-option',
+   fieldSelect: '.oxd-select-text-input',
+   optionSelect: '.oxd-select-option',
    inputEmployeeName: 'input[placeholder="Type for hints..."]',
-   opcaoEmployee: '.oxd-autocomplete-option',
+   optionEmployee: '.oxd-autocomplete-option',
    buttonSearch: '.oxd-form-actions button',
-   validaMensaMEnu: 'div h5',
-   opcoesGrid: '.oxd-table-card .oxd-padding-cell div'
+   validateMessMenu: 'div h5',
+   optionGrid: '.oxd-table-card .oxd-padding-cell div',
+   btnAdd: '.orangehrm-header-container button'
 }

@@ -11,11 +11,11 @@ import home from "../support/pages/homePage"
 //   })
 // #Login com sucesso
   Cypress.Commands.add('LoginSucesso', () => {
-    login.acessarPage()
-    login.validaLoginPage()
-    login.preencheLogin('Admin', 'admin123')
-    login.clicarLogin()
-    home.validaURLHome().then((urlAtual) => {
+    login.accessPage()
+    login.validateLoginPage()
+    login.fillLogin('Admin', 'admin123')
+    login.clickLogin()
+    home.validateURLHome().then((urlAtual) => {
     expect(urlAtual).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
     })
   })
@@ -27,10 +27,10 @@ import home from "../support/pages/homePage"
   
 //   Cypress.Commands.add('DadosPessoais', (nome, email, cpf) => {
 //     if (nome !== null) {
-//       cy.get(el.campoNome).type(nome);
+//       cy.get(el.fieldNome).type(nome);
 //     }
 //     if (email !== null) {
-//       cy.get(el.campoEmail).type(email);
+//       cy.get(el.fieldEmail).type(email);
 //     }
 //     if (cpf !== null) {
 //       cy.get(el.campoCpf).type(cpf);

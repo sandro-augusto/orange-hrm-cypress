@@ -3,42 +3,41 @@ import adminPage from "../support/pages/adminPage";
 
 describe('Admin', () => {
 
-    context('Admin validações',() => {
+    context('Admin validations',() => {
         beforeEach(() => {
             cy.LoginSucesso()
         })
 
-        it('Validar pesquisa do Admin campo Username', () => {
-            adminPage.ValidarPesquisaAdmin('Username').then((mensagem) => {
+        it('Validate Admin search Username field', () => {
+            adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
                 expect(mensagem).to.eq('FMLName1')
             })
         })
 
-        it.only('Validar pesquisa do Admin campo UserRole', () => {
-            adminPage.ValidarPesquisaAdmin('UserRole').then((mensagem) => {
+        it('Validate Admin search UserRole field', () => {
+            adminPage.ValidateSearchAdmin('UserRole').then((mensagem) => {
                 expect(mensagem).to.eq('ESS')
             })
         })
 
-        it('Validar pesquisa do Admin campo EmployeeName', () => {
-            adminPage.ValidarPesquisaAdmin('EmployeeName').then((mensagem) => {
+        it('Validate Admin search EmployeeName field', () => {
+            adminPage.ValidateSearchAdmin('EmployeeName').then((mensagem) => {
                 expect(mensagem).to.eq('Qwerty LName')
             })
         })
 
-        it('Validar pesquisa do Admin campo Status', () => {
-            adminPage.ValidarPesquisaAdmin('Status').then((mensagem) => {
+        it('Validate Admin search Status field', () => {
+            adminPage.ValidateSearchAdmin('Status').then((mensagem) => {
                 expect(mensagem).to.eq('Enabled')
             })
         })
     
-        // it('Adicionar um admin com sucesso', () => {
-        //     homePage.ValidarOpcoesMenu('Admin').then((mensagem) => {
-        //         expect(mensagem).to.eq('System Users')
-        //     // adminPage.preencheUsername("Teste")
-        //     adminPage.teste()
-        //     })
-        // })
+        it.only('Add an admin successfully', () => {
+            // homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+            //     expect(mensagem).to.eq('System Users')
+            // adminPage.fillUsername("Teste")
+            adminPage.teste()
+        })
 
 
     })
