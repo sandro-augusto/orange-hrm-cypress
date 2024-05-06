@@ -3,16 +3,20 @@ import adminPage from "../support/pages/adminPage";
 
 describe('Admin', () => {
 
-    context('Admin validações',() => {
+    context('Admin validations',() => {
         beforeEach(() => {
             cy.LoginSucesso()
         })
     
-        it('Adicionar um admin com sucesso', () => {
+        it('Add an admin successfully', () => {
             homePage.ValidarOpcoesMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
-            // adminPage.preencheUsername("Teste")
-            adminPage.clickSearch()
+            adminPage.clickAdd()
+            adminPage.fillInEmployeeName("Charles Carter")
+            adminPage.fillInUsername("Testing")
+            adminPage.fillInPassword("Mypassword1$")
+            adminPage.fillInConfirmPassword("Mypassword1$")
+            adminPage.clickSave()
             })
         })
     })

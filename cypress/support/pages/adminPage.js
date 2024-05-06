@@ -1,10 +1,28 @@
 let el = require('../elements/adminElements').ADMIN
-const {click, set, waitElement, get_text_index, get_text, click_index } = require('../actions');
+const {click, set, setIndex, waitElement, get_text_index, get_text, click_index, click_text } = require('../actions');
 
 export default {
-    preencheUsername(username) {
+    fillInUsername(username) {
         if (username !== null) {
-            set(el.inputUser, username);
+            setIndex(el.input, username, 1);
+        }
+    },
+
+    fillInEmployeeName(name) {
+        if (name !== null) {
+            set(el.inputEmployeeName, name);
+        }
+    },
+
+    fillInPassword(password) {
+        if (password !== null) {
+            setIndex(el.input, password, 2);
+        }
+    },
+
+    fillInConfirmPassword(password) {
+        if (password !== null) {
+            setIndex(el.input, password, 3);
         }
     },
 
@@ -24,8 +42,8 @@ export default {
         click_index(el.buttonSearch, 1)
     },
 
-    clickForgetPassword() {
-        click(el.linkForgetPass)
+    clickSave() {
+        click_index(el.buttonSearch, )
     },
 
     validaMensErro() {

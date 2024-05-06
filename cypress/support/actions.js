@@ -42,6 +42,17 @@ function set(el, text) {
     return set;
 }
 
+function setIndex(el, text, index) {
+    waitElement(el)
+    try {
+        cy.get(el).eq(index).type(text)
+        cy.log('Setou as informações no ' + el + ' com o index ' + index)
+    } catch (error) {
+        cy.log('Exceção capturada: ' + error.message);
+    }
+    return set;
+}
+
 function click(el) {
     waitElement(el)
     try {
@@ -160,5 +171,5 @@ function splitIn(el, index) {
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, carregaPage
+            click_text, carregaPage, setIndex
 };
