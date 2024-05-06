@@ -16,11 +16,10 @@ export default {
         click_index(elements.optionMenu, 0)
         switch(option){
             case 'Username':
-                set_Index(el.inputUser, 1, 'FMLName1')
+                cy.scrollTo('top', { scrollBehavior: false });
+                set_Index(el.inputUser, 1, 'FMLName')
                 cy.wait(1000)
-                // pressEnterIndex(el.inputUser, 1)
                 click_index(el.buttonSearch, 1)
-                // click_indexForce(el.buttonSearch, 1)
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 2)
             case 'UserRole':
@@ -39,7 +38,7 @@ export default {
                 click_indexForce(el.fieldSelect, 1)
                 click_indexForce(el.optionSelect, 1)  
                 click_indexForce(el.buttonSearch, 1)
-                return get_text_index(el.optionGrid, 6)
+                return get_text_index(el.optionGrid, 5)
             default:
                 'Favor informar uma opção válida'
         }
