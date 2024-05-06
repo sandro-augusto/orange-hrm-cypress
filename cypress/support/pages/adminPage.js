@@ -44,23 +44,6 @@ export default {
         }
     },
 
-
-    teste(){
-        click_index(elements.optionMenu, 0)
-        click(el.btnAdd)
-        cy.wait(5000)
-        // click_index(el.optionSelect, 0)
-        // // validarElNaoVisiveis()
-        // cy.wait(2000)
-
-        // click_index(el.opcaoUseRole, 2)
-        // cy.wait(2000)
-
-        // cy.scrollTo('top');
-        // cy.wait(2000)
-
-    },
-
     validateLoginPage() {
         return waitElement(el.validateLogin)
     },
