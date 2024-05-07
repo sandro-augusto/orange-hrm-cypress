@@ -4,7 +4,7 @@ const {click, set, waitElement, get_text_index, get_text, click_index, set_Index
 const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
 
 export default {
-    fillInInformations(userRole, status, employeeName, username, password, confirmPassword) {
+    fillInInformations(userRole, employeeName, status, username, password, confirmPassword) {
         if (userRole !== null) {
                 switch(userRole) {
                     case 'Admin':
@@ -17,6 +17,12 @@ export default {
                     default:
                         'Favor informar uma opção'
                 }
+            }
+
+            if (employeeName !== null) {
+                set(el.inputEmployeeName, employeeName)
+                cy.wait(2000)
+                click(el.optionEmployee)
             }
 
             if (status !== null) {
@@ -32,13 +38,6 @@ export default {
                         'Favor informar uma opção'
                 }
             }
-        
-
-        if (employeeName !== null) {
-            set(el.inputEmployeeName, employeeName)
-            cy.wait(2000)
-            click(el.optionEmployee)
-        }
 
         if (username !== null) {
             set_Index(el.inputUser, username, 1);
@@ -53,18 +52,12 @@ export default {
         }
     },
 
-    testeAdmin() {
-        click(el.btnAdd)
-        click_index(el.fieldSelect, 0)
-        click_index(el.optionSelect, 1)
-    },
-
     ValidateSearchAdmin(option) {
         click_index(elements.optionMenu, 0)
         switch(option){
             case 'Username':
                 cy.scrollTo('top', { scrollBehavior: false });
-                set_Index(el.inputUser, 1, 'FMLName1')
+                set_Index(el.inputUser, 1, 'Admin')
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
@@ -76,7 +69,7 @@ export default {
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 3)
             case 'EmployeeName':
-                set(el.inputEmployeeName, 'Qwerty LName') 
+                set(el.inputEmployeeName, 'Mohan user') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)
@@ -99,6 +92,10 @@ export default {
         click(el.btnAdd)
     },
 
+    clickSave() {
+        click_index(el.btnSave, 1)
+    },
+
     clickReset() {
         click_index(el.buttonSearch, 0)
     },
@@ -107,19 +104,7 @@ export default {
         click_index(el.buttonSearch, 1)
     },
 
-    clickForgetPassword() {
-        click(el.linkForgetPass)
-    },
-
-    validateMessError() {
-        return get_text_index(el.validateMessError, 0)
-    },
-
-    validateMessError2() {
-        return get_text_index(el.validateMessError, 1)
-    },
-
-    validateAlertError() {
-        return get_text(el.alertErro)
+    validateAlert() {
+        return get_text(el.alertSuccess)
     }
 }

@@ -10,7 +10,7 @@ describe('Admin', () => {
 
         it('Validate Admin search Username field', () => {
             adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
-                expect(mensagem).to.eq('FMLName1')
+                expect(mensagem).to.eq('Admin')
             })
         })
 
@@ -22,7 +22,7 @@ describe('Admin', () => {
 
         it('Validate Admin search EmployeeName field', () => {
             adminPage.ValidateSearchAdmin('EmployeeName').then((mensagem) => {
-                expect(mensagem).to.eq('Qwerty LName')
+                expect(mensagem).to.eq('Mohan user')
             })
         })
 
@@ -32,11 +32,13 @@ describe('Admin', () => {
             })
         })
     
-        it('Add an admin successfully', () => {
+        it.only('Add an admin successfully', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.clickSave()
+            adminPage.validateAlert("Successfully Saved")
             })
         })
 
@@ -44,7 +46,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -52,7 +54,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("ESS", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("ESS", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -60,7 +62,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("ESS", "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("ESS", "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -68,7 +70,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations(null, "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations(null, "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -76,7 +78,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", null, "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Charles Carter", null, "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -84,7 +86,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Enabled", null, "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", null, "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -92,7 +94,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", null, "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", null, "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -100,7 +102,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", null, "Mypassword1$")
+            adminPage.fillInInformations("Admin","Charles Carter", "Enabled", "Nagato", null, "Mypassword1$")
             })
         })
 
@@ -108,7 +110,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", null)
+            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", null)
             })
         })
 

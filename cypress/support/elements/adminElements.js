@@ -7,5 +7,7 @@ export const ADMIN = {
    buttonSearch: '.oxd-form-actions button',
    validateMessMenu: 'div h5',
    optionGrid: '.oxd-table-card .oxd-padding-cell div',
-   btnAdd: '.orangehrm-header-container button'
+   btnAdd: '.orangehrm-header-container button',
+   btnSave: '.oxd-button',
+   alertSuccess: '.oxd-toast-content p'
 }

@@ -28,6 +28,10 @@ export default {
         click(el.linkForgetPass)
     },
 
+    clickForgetPassword() {
+        click(el.linkForgetPass)
+    },
+
     validateMessError() {
         return get_text_index(el.validateMessError, 0)
     },
