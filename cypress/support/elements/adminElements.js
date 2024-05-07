@@ -10,5 +10,6 @@ export const ADMIN = {
    optionGrid: '.oxd-table-card .oxd-padding-cell div',
    btnAdd: '.orangehrm-header-container button',
    btnSave: '.oxd-button',
-   alertSuccess: '.oxd-toast-content p'
+   alertSuccess: '.oxd-toast-content p',
+   btnDelete: '.oxd-icon-button oxd-table'
 }

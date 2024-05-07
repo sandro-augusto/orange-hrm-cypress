@@ -57,7 +57,7 @@ export default {
         switch(option){
             case 'Username':
                 cy.scrollTo('top', { scrollBehavior: false });
-                set_Index(el.inputUser, 1, 'Admin')
+                set_Index(el.inputUser, 1, 'Nagato')
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
@@ -69,7 +69,7 @@ export default {
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 3)
             case 'EmployeeName':
-                set(el.inputEmployeeName, 'Mohan user') 
+                set(el.inputEmployeeName, 'Charles Carter') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)
@@ -94,6 +94,10 @@ export default {
 
     clickSave() {
         click_index(el.btnSave, 1)
+    },
+
+    clickDelete() {
+        click_index(el.btnDelete, 20)
     },
 
     clickReset() {

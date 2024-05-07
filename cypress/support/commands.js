@@ -1,6 +1,7 @@
 var el = require('../support/elements/loginElements').LOGIN
 import login from "../support/pages/loginPage"
 import home from "../support/pages/homePage"
+import admin from "../support/pages/adminPage"
 
   Cypress.Commands.add('LoginSucesso', () => {
     login.accessPage()
@@ -13,11 +14,9 @@ import home from "../support/pages/homePage"
   })
 
   Cypress.Commands.add('registerUser', () => {
-    adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
-      expect(mensagem).to.eq('Admin')
-    adminPage.clickAdd()
-    adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
-    adminPage.clickSave()
-    adminPage.validateAlert("Successfully Saved")
+    admin.ValidateSearchAdmin()
+    admin.clickAdd()
+    admin.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+    admin.clickSave()
+    admin.validateAlert("Successfully Saved")
   })
-}) 

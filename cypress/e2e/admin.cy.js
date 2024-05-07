@@ -6,23 +6,25 @@ describe('Admin', () => {
     context('Admin validations',() => {
         beforeEach(() => {
             cy.LoginSucesso()
+            cy.registerUser()
         })
 
         it.only('Validate Admin search Username field', () => {
             adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
-                expect(mensagem).to.eq('Admin')
+                expect(mensagem).to.eq('Nagato')
             })
+            adminPage.clickDelete()
         })
 
         it('Validate Admin search UserRole field', () => {
             adminPage.ValidateSearchAdmin('UserRole').then((mensagem) => {
-                expect(mensagem).to.eq('ESS')
+                expect(mensagem).to.eq('Admin')
             })
         })
 
         it('Validate Admin search EmployeeName field', () => {
             adminPage.ValidateSearchAdmin('EmployeeName').then((mensagem) => {
-                expect(mensagem).to.eq('Mohan user')
+                expect(mensagem).to.eq('Charles Carter')
             })
         })
 
