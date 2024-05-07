@@ -32,13 +32,91 @@ describe('Admin', () => {
             })
         })
     
-        it.only('Add an admin successfully', () => {
+        it('Add an admin successfully', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
-            // adminPage.fillInConfirmPassword("Mypassword1$")
-            // adminPage.clickSave()
+            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an admin disabled', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an ESS successfully', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("ESS", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an ESS disabled', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("ESS", "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an user role in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations(null, "Disabled", "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an status in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", null, "Charles Carter", "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an employee name in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", "Enabled", null, "Nagato", "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an username in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", null, "Mypassword1$", "Mypassword1$")
+            })
+        })
+
+        it('Add an password in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", null, "Mypassword1$")
+            })
+        })
+
+        it('Add an confirm password in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations("Admin", "Enabled", "Charles Carter", "Nagato", "Mypassword1$", null)
+            })
+        })
+
+        it('Add an fields in blank', () => {
+            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
+                expect(mensagem).to.eq('System Users')
+            adminPage.clickAdd()
+            adminPage.fillInInformations(null, null, null, null, null, null)
             })
         })
     })

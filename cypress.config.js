@@ -8,7 +8,7 @@ module.exports = defineConfig({
     scrollBehavior: false,
     chromeWebSecurity: false,
     video: false,
-    download: false,
+    downloads: false,
     experimentalRunAllSpecs: true,
     setupNodeEvents(on, config) {
       allureWriter(on, config);

@@ -1,18 +1,47 @@
 let el = require('../elements/adminElements').ADMIN
 let elements = require('../elements/homeElements').HOME
-const {click, set, waitElement, get_text_index, get_text, click_index, scrollTo, set_Index, click_indexForce } = require('../actions');
+const {click, set, waitElement, get_text_index, get_text, click_index, set_Index } = require('../actions');
 const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
 
 export default {
+    fillInInformations(userRole, status, employeeName, username, password, confirmPassword) {
+        if (userRole !== null) {
+                switch(userRole) {
+                    case 'Admin':
+                        click_index(el.fieldSelect, 0)
+                        click_index(el.optionSelect, 1)
+                    break;
+                    case 'ESS':
+                        click_index(el.fieldSelect, 0)
+                        click_index(el.optionSelect, 2)
+                    default:
+                        'Favor informar uma opção'
+                }
+            }
 
-    
-    fillInInformations(username, employeeName, password, confirmPassword) {
-        if (username !== null) {
-            set_Index(el.inputUser, username, 1);
-        }
+            if (status !== null) {
+                switch(status) {
+                    case 'Enabled':
+                        click_index(el.fieldSelect, 1)
+                        click_index(el.optionSelect, 1)
+                    break;
+                    case 'Disabled':
+                        click_index(el.fieldSelect, 1)
+                        click_index(el.optionSelect, 2)
+                    default:
+                        'Favor informar uma opção'
+                }
+            }
+        
 
         if (employeeName !== null) {
             set(el.inputEmployeeName, employeeName)
+            cy.wait(2000)
+            click(el.optionEmployee)
+        }
+
+        if (username !== null) {
+            set_Index(el.inputUser, username, 1);
         }
 
         if (password !== null) {
@@ -22,6 +51,12 @@ export default {
         if (confirmPassword !== null) {
             set_Index(el.inputUser, confirmPassword, 3)
         }
+    },
+
+    testeAdmin() {
+        click(el.btnAdd)
+        click_index(el.fieldSelect, 0)
+        click_index(el.optionSelect, 1)
     },
 
     ValidateSearchAdmin(option) {
