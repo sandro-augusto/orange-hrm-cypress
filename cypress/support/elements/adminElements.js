@@ -1,4 +1,5 @@
 export const ADMIN = {
+   urlAdmin:'https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers',
    inputUser: '.oxd-input',
    fieldSelect: '.oxd-select-text-input',
    optionSelect: '.oxd-select-option',

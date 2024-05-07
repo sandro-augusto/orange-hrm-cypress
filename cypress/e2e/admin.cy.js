@@ -8,7 +8,7 @@ describe('Admin', () => {
             cy.LoginSucesso()
         })
 
-        it('Validate Admin search Username field', () => {
+        it.only('Validate Admin search Username field', () => {
             adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
                 expect(mensagem).to.eq('Admin')
             })
@@ -32,7 +32,7 @@ describe('Admin', () => {
             })
         })
     
-        it.only('Add an admin successfully', () => {
+        it('Add an admin successfully', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()

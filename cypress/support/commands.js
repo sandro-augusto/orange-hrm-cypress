@@ -13,8 +13,8 @@ import home from "../support/pages/homePage"
   })
 
   Cypress.Commands.add('registerUser', () => {
-    homePage.ValidateOptionMenu('Admin').then((mensagem) => {
-      expect(mensagem).to.eq('System Users')
+    adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
+      expect(mensagem).to.eq('Admin')
     adminPage.clickAdd()
     adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
     adminPage.clickSave()
