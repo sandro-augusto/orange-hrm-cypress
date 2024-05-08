@@ -17,6 +17,11 @@
 - Instalar uma IDE, como o [Visual Studio Code](https://code.visualstudio.com/download)
 - Instalar o [Git](https://git-scm.com/downloads) (caso queira trabalhar com projeto em sua máquina) 
 
+##  📥 Clonando o projeto:
+```bash
+git clone https://github.com/sandro-augusto/orange-hrm-cypress.git
+  ```
+
 ##  👩🏻‍💻​ Para instalar as depências e plugin do projeto:
 
 Abra o terminal no VSCode (utilize o CTRL + J) e digite o seguinte comando:
