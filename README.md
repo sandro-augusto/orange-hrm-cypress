@@ -67,7 +67,7 @@ yarn cypress run
     <tr>
 	  <td align="center" valign="top" width="14.28%">
         <a href="https://www.linkedin.com/in/sandro-augusto/" target="_blank"><img src="https://avatars.githubusercontent.com/u/107635632?v=4" width="100px;" alt="Sandro Augusto"/></a><br />
-        <sub><b><a href="https://github.com/Amandatec" target="_blank">Sandro Augusto</a></b></sub><br />
+        <sub><b><a href="https://github.com/sandro-augusto" target="_blank">Sandro Augusto</a></b></sub><br />
     </td>
       <td align="center" valign="top" width="14.28%">
         <a href="https://www.linkedin.com/in/marilliadantas/" target="_blank"><img src="https://avatars.githubusercontent.com/u/105676314?v=4" width="100px;" alt="Marillia Dantas"/></a><br />
