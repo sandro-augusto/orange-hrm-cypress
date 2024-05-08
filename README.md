@@ -1,37 +1,39 @@
-# AUTOMAÇÃO FRONT-END - ORANGE HRM
+<h1 align="center"> AUTOMAÇÃO FRONT-END - ORANGE HRM 🍊</h1>
 
-**PROJETO CYPRESS DE CADASTRO PARA PASSEAR E ADESTRAR ANIMAIS DE ESTIMAÇÃO**
+![STATUS](https://img.shields.io/static/v1?label=STATUS&message=%20EM%20CONSTRU%C3%87%C3%83O&color=yellow&style=for-the-badge)
 
-## Instalação do Ambiente
-* Instalar a IDE que dejesar, recomendado o Visual Studio Code, onde serão realizadas as execuções
 
-* NodeJs com a versão 18.16.1
+## 💬 Sobre o projeto
+<p> Este projeto tem como objetivo aprimorar nossas habilidades em automação e lógica de programação, através da troca de conhecimentos baseados em nossa experiência. O projeto visa <b>estudo</b> e aprimoramento de nossos conhecimentos, utilizando a ferramenta <b>Cypress</b> com o intuito de dominá-la em um <b>nível avançado</b>
 
-* Java com a versão 1.8.0_371
+## 💻 Tecnologias utilizadas
 
-## Comando para instalar as depências e plugin do projeto:
-```sh default
-* yarn install
-```
-**ou**
-```sh default
-* npm install
-```
-## Comando para abrir o Cypress:
-```sh default
-* yarn cypress open
-```
-**ou**
-```sh default
-* npx cypress open
-```
-## Comando pra rodar o projeto com as TAG'S que estão em Scripts dentro da pasta "/package.json":
-```sh default
-* yarn run (tag)
-```
-**ou**
-```sh default
-* npx cypress (tag)
+- Node (v20.11.0)
+
+- Cypress
+
+## 📋 Pré-Requisitos
+- Instalar o [Node.js](https://nodejs.org/)
+- Instalar uma IDE, como o [Visual Studio Code](https://code.visualstudio.com/download)
+- Instalar o [Git](https://git-scm.com/downloads) (caso queira trabalhar com projeto em sua máquina) 
+
+##  👩🏻‍💻​ Para instalar as depências e plugin do projeto:
+
+Abra o terminal no VSCode (utilize o CTRL + J) e digite o seguinte comando:
+
+```bash
+yarn install
+  ```
+
+### Comando para abrir o Cypress:
+
+```bash
+yarn cypress open
+  ```
+
+#### Executando no modo headless 
+```bash
+yarn cypress run
 ```
 
 # Cypress Project Structure
@@ -49,3 +51,22 @@
 * **"yallure_serve" - Abrir o servidor do relatório Allure com o Yarn**
 * **"nallure_serve" - Abrir o servidor do relatório Allure com o NPM**
 * **"test" - Rodar o projeto em headless e abrir o relatório Allure em HTML**
+
+## Recursos Adicionais
+- [Documentação do Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+- [Exemplos de receitas](https://github.com/cypress-io/cypress-example-recipes)
+
+## 👥 Autores do projeto
+<table>
+  <tbody>
+    <tr>
+	  <td align="center" valign="top" width="14.28%">
+        <a href="https://www.linkedin.com/in/sandro-augusto/" target="_blank"><img src="https://avatars.githubusercontent.com/u/107635632?v=4" width="100px;" alt="Sandro Augusto"/></a><br />
+        <sub><b><a href="https://github.com/Amandatec" target="_blank">Sandro Augusto</a></b></sub><br />
+    </td>
+      <td align="center" valign="top" width="14.28%">
+        <a href="https://www.linkedin.com/in/marilliadantas/" target="_blank"><img src="https://avatars.githubusercontent.com/u/105676314?v=4" width="100px;" alt="Marillia Dantas"/></a><br />
+        <sub><b><a href="https://github.com/marilliadantas" target="_blank">Marillia Dantas</a></b></sub><br />
+      </td>
+  </tbody>
+</table>
