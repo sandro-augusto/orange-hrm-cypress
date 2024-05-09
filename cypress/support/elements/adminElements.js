@@ -1,5 +1,4 @@
 export const ADMIN = {
-   urlAdmin:'https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers',
    inputUser: '.oxd-input',
    fieldSelect: '.oxd-select-text-input',
    optionSelect: '.oxd-select-option',
@@ -11,5 +10,6 @@ export const ADMIN = {
    btnAdd: '.orangehrm-header-container button',
    btnSave: '.oxd-button',
    alertSuccess: '.oxd-toast-content p',
-   btnDelete: '.oxd-icon-button oxd-table'
+   btnDelete: '.oxd-icon.bi-trash',
+   btnConfirmDelete: '.oxd-button--label-danger'
 }

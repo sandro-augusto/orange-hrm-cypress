@@ -3,28 +3,31 @@ import adminPage from "../support/pages/adminPage";
 
 describe('Admin', () => {
 
-    context('Admin validations',() => {
+    context('Admin validations fields',() => {
         beforeEach(() => {
             cy.LoginSucesso()
             cy.registerUser()
         })
 
-        it.only('Validate Admin search Username field', () => {
-            adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
-                expect(mensagem).to.eq('Nagato')
-            })
+        afterEach(() => {
             adminPage.clickDelete()
         })
 
-        it('Validate Admin search UserRole field', () => {
+        it('Validate Admin search Username field', () => {
+            adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
+                expect(mensagem).to.eq('Guilherme')
+            })
+        })
+
+        it.only('Validate Admin search UserRole field', () => {
             adminPage.ValidateSearchAdmin('UserRole').then((mensagem) => {
                 expect(mensagem).to.eq('Admin')
             })
         })
 
         it('Validate Admin search EmployeeName field', () => {
-            adminPage.ValidateSearchAdmin('EmployeeName').then((mensagem) => {
-                expect(mensagem).to.eq('Charles Carter')
+            adminPage.ValidateSearchAdmin('EmployeeName', 'Neha  Shimpi').then((mensagem) => {
+                expect(mensagem).to.eq('dhananjay   kumar')
             })
         })
 
@@ -33,12 +36,26 @@ describe('Admin', () => {
                 expect(mensagem).to.eq('Enabled')
             })
         })
-    
+    })
+
+    context('Admin validations fields',() => {
+        beforeEach(() => {
+            cy.LoginSucesso()
+
+        })
+
+        afterEach(() => {
+            adminPage.ValidateSearchAdmin('Username', 'Guilherme').then((mensagem) => {
+                expect(mensagem).to.eq('Guilherme')
+            })
+            adminPage.clickDelete()
+        })
+
         it('Add an admin successfully', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             adminPage.clickSave()
             adminPage.validateAlert("Successfully Saved")
             })
@@ -48,7 +65,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -56,7 +73,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("ESS", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("ESS", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -64,7 +81,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("ESS", "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("ESS", "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -72,7 +89,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations(null, "Charles Carter", "Disabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations(null, "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -80,7 +97,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Charles Carter", null, "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Neha  Shimpi", null, "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -88,7 +105,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", null, "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", null, "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -96,7 +113,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", null, "Mypassword1$", "Mypassword1$")
+            adminPage.fillInInformations("Admin", "Neha  Shimpi", "Enabled", null, "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -104,7 +121,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin","Charles Carter", "Enabled", "Nagato", null, "Mypassword1$")
+            adminPage.fillInInformations("Admin","Neha  Shimpi", "Enabled", "Guilherme", null, "Mypassword1$")
             })
         })
 
@@ -112,7 +129,7 @@ describe('Admin', () => {
             homePage.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             adminPage.clickAdd()
-            adminPage.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", null)
+            adminPage.fillInInformations("Admin", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", null)
             })
         })
 
