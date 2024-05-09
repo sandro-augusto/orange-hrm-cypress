@@ -6,6 +6,7 @@ describe('Admin', () => {
     context('Admin validations fields',() => {
         beforeEach(() => {
             cy.LoginSucesso()
+            homePage.ValidateOptionMenu('Admin')
             cy.registerUser()
         })
 
@@ -13,13 +14,13 @@ describe('Admin', () => {
             adminPage.clickDelete()
         })
 
-        it('Validate Admin search Username field', () => {
+        it.only('Validate Admin search Username field', () => {
             adminPage.ValidateSearchAdmin('Username').then((mensagem) => {
                 expect(mensagem).to.eq('Guilherme')
             })
         })
 
-        it.only('Validate Admin search UserRole field', () => {
+        it('Validate Admin search UserRole field', () => {
             adminPage.ValidateSearchAdmin('UserRole').then((mensagem) => {
                 expect(mensagem).to.eq('Admin')
             })

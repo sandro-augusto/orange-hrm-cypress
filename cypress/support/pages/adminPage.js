@@ -1,5 +1,4 @@
 let el = require('../elements/adminElements').ADMIN
-let elements = require('../elements/homeElements').HOME
 const {click, set, waitElement, get_text_index, get_text, click_index, set_Index } = require('../actions');
 const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
 
@@ -53,7 +52,6 @@ export default {
     },
 
     ValidateSearchAdmin(option, employeeName) {
-        click_index(elements.optionMenu, 0)
         switch(option){
             case 'Username':
                 cy.scrollTo('top', { scrollBehavior: false });
