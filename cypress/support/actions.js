@@ -119,6 +119,17 @@ function clear(el) {
     return clear;
 }
 
+function clear_index(el, index) {
+    waitElement_index(el, index)
+    try {
+        cy.get(el).eq(index).clear();
+        cy.log('Cleaned on the Element ' + el + ' with index ' + index)
+    } catch (error) {
+        cy.log('Exception caught: ' + error.message);
+    }
+    return clear_index;
+}
+
 function get_text(el) {
     waitElement(el)
     let text
@@ -195,5 +206,5 @@ function splitIn(el, index) {
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, carregaPage, set_Index, clickForce, click_indexForce
+            click_text, carregaPage, set_Index, clickForce, click_indexForce, clear_index
 };
