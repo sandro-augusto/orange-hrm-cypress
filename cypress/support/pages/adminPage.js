@@ -52,24 +52,24 @@ export default {
         }
     },
 
-    ValidateSearchAdmin(option) {
+    ValidateSearchAdmin(option, employeeName) {
         click_index(elements.optionMenu, 0)
         switch(option){
             case 'Username':
                 cy.scrollTo('top', { scrollBehavior: false });
-                set_Index(el.inputUser, 1, 'Nagato')
+                set_Index(el.inputUser, 'Guilherme', 1)
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 2)
             case 'UserRole':
                 click_index(el.fieldSelect, 0)
-                click_index(el.optionSelect, 2)
+                click_index(el.optionSelect, 1)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 3)
             case 'EmployeeName':
-                set(el.inputEmployeeName, 'Charles Carter') 
+                set(el.inputEmployeeName, employeeName) 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)
@@ -97,7 +97,9 @@ export default {
     },
 
     clickDelete() {
-        click_index(el.btnDelete, 20)
+        click(el.btnDelete)
+        cy.wait(2000)
+        click(el.btnConfirmDelete)
     },
 
     clickReset() {

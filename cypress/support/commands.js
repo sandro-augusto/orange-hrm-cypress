@@ -14,9 +14,9 @@ import admin from "../support/pages/adminPage"
   })
 
   Cypress.Commands.add('registerUser', () => {
-    admin.ValidateSearchAdmin()
+    home.ValidateOptionMenu('Admin')
     admin.clickAdd()
-    admin.fillInInformations("Admin", "Charles Carter", "Enabled", "Nagato", "Mypassword1$", "Mypassword1$")
+    admin.fillInInformations("Admin", "dhananjay   kumar", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
     admin.clickSave()
     admin.validateAlert("Successfully Saved")
   })
