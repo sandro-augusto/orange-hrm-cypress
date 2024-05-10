@@ -1,42 +1,42 @@
-<h1 align="center"> AUTOMAÇÃO FRONT-END - ORANGE HRM 🍊</h1>
+<h1 align="center"> FRONT-END AUTOMATION - ORANGE HRM 🍊</h1>
 
 ![STATUS](https://img.shields.io/static/v1?label=STATUS&message=%20EM%20CONSTRU%C3%87%C3%83O&color=yellow&style=for-the-badge)
 
 
-## 💬 Sobre o projeto
-<p> Este projeto tem como objetivo aprimorar nossas habilidades em automação e lógica de programação, através da troca de conhecimentos baseados em nossa experiência. O projeto visa <b>estudo</b> e aprimoramento de nossos conhecimentos, utilizando a ferramenta <b>Cypress</b> com o intuito de dominá-la em um <b>nível avançado</b>
+## 💬 About the project
+<p> This project aims to improve our skills in automation and programming logic, through the exchange of knowledge based on our experience. The project aims to <b>study</b> and improve our knowledge, using the <b>Cypress</b> tool with the aim of mastering it at an <b>advanced level</b>.
 
-## 💻 Tecnologias utilizadas
+## 💻 Technologies used
 
 - Node (v20.11.0)
 
 - Cypress
 
-## 📋 Pré-Requisitos
-- Instalar o [Node.js](https://nodejs.org/)
-- Instalar uma IDE, como o [Visual Studio Code](https://code.visualstudio.com/download)
-- Instalar o [Git](https://git-scm.com/downloads) (caso queira trabalhar com projeto em sua máquina) 
+## 📋 Prerequisites
+- Install the [Node.js](https://nodejs.org/)
+- Install an IDE, such as [Visual Studio Code](https://code.visualstudio.com/download)
+- Install the [Git](https://git-scm.com/downloads) (if you want to work with a project on your machine) 
 
-##  📥 Clonando o projeto:
+##  📥 Cloning the project:
 ```bash
 git clone https://github.com/sandro-augusto/orange-hrm-cypress.git
   ```
 
-##  👩🏻‍💻​ Para instalar as depências e plugin do projeto:
+##  👩🏻‍💻​ To install project dependencies and plugins:
 
-Abra o terminal no VSCode (utilize o CTRL + J) e digite o seguinte comando:
+Open the terminal in VSCode (use CTRL + J) and type the following command:
 
 ```bash
 yarn install
   ```
 
-### Comando para abrir o Cypress:
+### Command to open Cypress:
 
 ```bash
 yarn cypress open
   ```
 
-#### Executando no modo headless 
+#### Running in headless mode
 ```bash
 yarn cypress run
 ```
@@ -45,23 +45,23 @@ yarn cypress run
 
 | Directory                | Purpose                                                                         |
 |--------------------------|-----------------------------------------------------------------------------------|
-| `e2e/`  | Está todas os passos que foram implementados nas `pages` |
-| `support/pages/`  | Objetos de página ou módulos, como `cadastroPage.js`, contendo métodos relacionados.|
-| `support/elements/`      | Definições de elementos comuns usados nas páginas, por exemplo, `homeElements.js`. |
-| `cypress.json`           | Arquivo de configuração principal do Cypress, onde podem ser definidas configurações globais para testes. |
+| `e2e/`  | All the steps that were implemented in the `pages` |
+| `support/pages/`  | Page objects or modules, such as `cadastroPage.js`, containing related methods.|
+| `support/elements/`      | Definitions of common elements used on pages, `homeElements.js`. |
+| `cypress.json`           | Cypress main configuration file where global settings for testing can be defined. |
 
 **SCRIPTS:**
-* **"run_allure" - TAG pra rodar em headless com o Yarn e o relatório Allure**
-* **"run_allure_npm" - TAG pra rodar em headless com o NPM e o relatório Allure** 
-* **"yallure_serve" - Abrir o servidor do relatório Allure com o Yarn**
-* **"nallure_serve" - Abrir o servidor do relatório Allure com o NPM**
-* **"test" - Rodar o projeto em headless e abrir o relatório Allure em HTML**
+* **"run_allure" - TAG to run headless with Yarn and the report Allure**
+* **"run_allure_npm" - TAG to run headless with NPM and the report Allure** 
+* **"yallure_serve" - Open the report server Allure as Yarn**
+* **"nallure_serve" - Open the report server Allure as NPM**
+* **"test" - Run the project headless and open the Allure report in HTML**
 
-## Recursos Adicionais
-- [Documentação do Cypress](https://docs.cypress.io/guides/overview/why-cypress)
-- [Exemplos de receitas](https://github.com/cypress-io/cypress-example-recipes)
+## Additional Resources
+- [Cypress Documentation](https://docs.cypress.io/guides/overview/why-cypress)
+- [Recipe examples](https://github.com/cypress-io/cypress-example-recipes)
 
-## 👥 Autores do projeto
+## 👥 Project authors
 <table>
   <tbody>
     <tr>

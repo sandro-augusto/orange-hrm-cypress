@@ -1,17 +1,17 @@
-import homePage from "../support/pages/homePage";
-import pimPage from "../support/pages/pimPage";
+import home from "../support/pages/homePage";
+import pim from "../support/pages/pimPage";
 
 describe('PIM', () => {
 
     context('Add an Employee',() => {
         beforeEach(() => {
-            cy.LoginSucesso()
-            homePage.ValidateOptionMenu('PIM')
+            cy.loginSuccess()
+            home.ValidateOptionMenu('PIM')
         })
 
         it('Add Employee success', () => {
-            pimPage.fillInformationsPIM('Teste', 'Automation', 'Employee', '1010')
-            pimPage.validateMessSuccess().then((mensagem) => {
+            pim.fillInformationsPIM('Teste', 'Automation', 'Employee', '1010')
+            pim.validateMessSuccess().then((mensagem) => {
                 expect(mensagem).eq('Successfully Saved')
             })
         })
