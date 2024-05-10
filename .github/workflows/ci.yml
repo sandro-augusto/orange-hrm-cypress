@@ -1,0 +1,70 @@
+name: Robot Framework CI with Cypress
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test_web:
+    name: Web Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Cypress
+        run: |
+          npm install cypress
+
+      - name: Run Cypress Tests
+        run: |
+          npx cypress run
+
+      - name: Test Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+            name: cypress-test-report
+            path: results/
+            
+  deploy:
+      name: Deploy GitHub Pages 🌐
+      runs-on: ubuntu-latest
+      needs: 
+        - test_web
+      permissions:
+        contents: read
+        pages: write
+        id-token: write
+      environment:
+        name: github-pages
+        url: https://sandro-augusto.io/orange-hrm-cypress/report.html
+      steps:
+        - name: Setup Pages
+          uses: actions/configure-pages@v5
+  
+        - name: Download Artifacts
+          uses: actions/download-artifact@v4
+          with: 
+            name: cypress-test-report
+  
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v3
+          with:
+            path: ./
+  
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v4

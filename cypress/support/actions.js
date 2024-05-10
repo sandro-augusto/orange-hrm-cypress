@@ -31,18 +31,6 @@ function carregaPage(url) {
     return waitElement_index;
 }
 
-function fecharBrowser() {
-    try {
-        cy.log('waiting close the browser')
-        cy.window().then(win => win.close())
-        cy.log('closed the browser')
-    } catch (error) {
-        cy.log('Exception caught: ' + error.message);
-    }
-    return waitElement_index;
-}
-
-
 function set(el, text) {
     waitElement(el)
     try {
@@ -211,13 +199,8 @@ function splitIn(el, index) {
     return corretValue;
 }
 
-
-
-
-
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, carregaPage, set_Index, clickForce, click_indexForce, clear_index,
-                fecharBrowser
+            click_text, carregaPage, set_Index, clickForce, click_indexForce, clear_index
 };

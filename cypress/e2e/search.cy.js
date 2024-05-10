@@ -1,81 +1,82 @@
-import homePage from "../support/pages/homePage";
+import home from "../support/pages/homePage";
 
 describe('Validate menu search', () => {
 
     context('Search menu validations',() => {
         beforeEach(() => {
-            cy.LoginSucesso()
+            cy.loginSuccess()
         })
         
         it('Search by Admin', () => {
-            homePage.validateResultSearch('Admin').then((message) => {
-                expect(message).eq("Admin")
+
+            home.validateResultSearch('Admin').then((mensagem) => {
+                expect(mensagem).to.eq("Admin")
             })
         })
 
         it('Search by PIM', () => {
-            homePage.validateResultSearch('PIM').then((message) => {
-                expect(message).eq("PIM")
+            home.validateResultSearch('PIM').then((mensagem) => {
+                expect(mensagem).to.eq("PIM")
             })
         })
 
         it('Search by Leave', () => {
-            homePage.validateResultSearch('Leave').then((message) => {
-                expect(message).eq("Leave")
+            home.validateResultSearch('Leave').then((mensagem) => {
+                expect(mensagem).to.eq("Leave")
             })
         })
 
         it('Search by Time', () => {
-            homePage.validateResultSearch('Time').then((message) => {
-                expect(message).eq("Time")
+            home.validateResultSearch('Time').then((mensagem) => {
+                expect(mensagem).to.eq("Time")
             })
         })
 
         it('Search by Recruitment', () => {
-            homePage.validateResultSearch('Recruitment').then((message) => {
-                expect(message).eq("Recruitment");
+            home.validateResultSearch('Recruitment').then((mensagem) => {
+                expect(mensagem).to.eq("Recruitment")
             })
         })
 
         it('Search by My Info', () => {
-            homePage.validateResultSearch('My Info').then((message) => {
-                expect(message).eq("My Info");
+            home.validateResultSearch('My Info').then((mensagem) => {
+                expect(mensagem).to.eq("My Info")
             })
         })
 
         it('Search by Performance', () => {
-            homePage.validateResultSearch('Performance').then((message) => {
-                expect(message).eq("Performance");
+            home.validateResultSearch('Performance').then((mensagem) => {
+                expect(mensagem).to.eq("Performance")
             })
         })
 
         it('Search by Dashboard', () => {
-            homePage.validateResultSearch('Dashboard').then((message) => {
-                expect(message).eq("Dashboard");
+            home.validateResultSearch('Dashboard').then((mensagem) => {
+                expect(mensagem).to.eq("Dashboard")
             })
         })
 
         it('Search by Directory', () => {
-            homePage.validateResultSearch('Directory').then((message) => {
-                expect(message).eq("Directory");
+            home.validateResultSearch('Directory').then((mensagem) => {
+                expect(mensagem).to.eq("Directory")
             })
         })
 
         it('Search by Maintenance', () => {
-            homePage.validateResultSearch('Maintenance').then((message) => {
-                expect(message).eq("Maintenance");
+            home.validateResultSearch('Maintenance').then((mensagem) => {
+                expect(mensagem).to.eq("Maintenance")
             })
         })
 
         it('Search by Claim', () => {
-            homePage.validateResultSearch('Claim').then((message) => {
-                expect(message).eq("Claim");
+            home.validateResultSearch('Claim').then((mensagem) => {
+                expect(mensagem).to.eq("Claim")
             })
         })
 
         it('Search by Buzz', () => {
-            homePage.validateResultSearch('Buzz').then((message) => {
-                expect(message).eq("Buzz");
+            home.validateResultSearch('Buzz').then((mensagem) => {
+                expect(mensagem).to.eq("Buzz")
             })
         })
     })

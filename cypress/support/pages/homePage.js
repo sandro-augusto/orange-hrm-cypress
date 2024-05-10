@@ -3,7 +3,6 @@ let element = require('../elements/searchElements').SEARCH
 const { get_text, get_text_index, click, click_index, set } = require('../actions');
 
 export default {
-
     validaHome() {
         return get_text_index(el.validateElHome, 0)
     },
@@ -64,5 +63,3 @@ export default {
         return get_text(element.resultSearch)
     } 
 }
-
-

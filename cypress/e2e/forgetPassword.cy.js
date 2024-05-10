@@ -21,7 +21,7 @@ describe("Validate or forgot my password", () => {
       })
     })
     
-    it("Forgot my password with username in blank", () => {
+    it("Forgot my password with blank username", () => {
       login.clickForgetPassword()
       resetPassword.validatePasswordResetPageTitle().then((message) => {
         console.log(message)

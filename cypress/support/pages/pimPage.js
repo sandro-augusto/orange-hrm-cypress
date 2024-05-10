@@ -1,6 +1,5 @@
 import { clear_index, click, click_index, get_text, replaceIN, set_Index, splitIn, get_text_index } from "../actions"
 let el = require('../elements/pimElements').EMPLOYEE
-const { validateElNotVisible } = require('../utils')
 
 export default {
 
@@ -35,13 +34,7 @@ export default {
     },
 
     validateGrid() {
-        // return get_text_index(el.gridId, 1)
-        // return get_text_index(el.gridId, 1)
-        // return splitIn(el.gridId, 2)
-        
-        return replaceIN(el.gridId, 'IdAscendingDescending', '')
-        // return text
-       
+        return get_text_index(el.gridId, 1)       
     },
 
     clickDelete() {

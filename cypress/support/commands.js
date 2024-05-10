@@ -3,8 +3,7 @@ import home from "../support/pages/homePage"
 import admin from "../support/pages/adminPage"
 import pimPage from "./pages/pimPage"
 
-// LOGIN
-  Cypress.Commands.add('LoginSucesso', () => {
+  Cypress.Commands.add('loginSuccess', () => {
     login.accessPage()
     login.validateLoginPage()
     login.fillLogin('Admin', 'admin123')

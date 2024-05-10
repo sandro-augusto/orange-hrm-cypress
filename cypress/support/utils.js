@@ -58,4 +58,4 @@ const pressEnterIndex = (el, index) => {
 module.exports = {
     randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, validateElNotVisible,
     pressEnter, pressEnterIndex
-};
+}

@@ -1,36 +1,33 @@
-import homePage from "../support/pages/homePage";
-import pimPage from "../support/pages/pimPage";
+import home from "../support/pages/homePage";
+import pim from "../support/pages/pimPage";
 
 describe('PIM', () => {
 
     context('Add an Employee',() => {
         beforeEach(() => {
-            cy.LoginSucesso()
-            homePage.ValidateOptionMenu('PIM')
+            cy.loginSuccess()
+            home.ValidateOptionMenu('PIM')
         })
 
         it('Add Employee success', () => {
-            pimPage.clickAdd()
-            pimPage.fillInformationsPIM('Teste', 'Automation', 'Employee', '1010')
-            pimPage.clickSave()
-            pimPage.validateMessSuccess().then((message) => {
+            pim.clickAdd()
+            pim.fillInformationsPIM('Teste', 'Automation', 'Employee', '1010')
+            pim.clickSave()
+            pim.validateMessSuccess().then((message) => {
                 expect(message).eq('Successfully Saved')
             })
         })
 
-        it.only('Delete Employee success', () => {
-            pimPage.searchEmployee('Teste Automation')
-            pimPage.clickSearch()
-            console.log(pimPage.validateGrid())
-            cy.wait(10000)
-            // expect(pimPage.validateGrid()).to.eq('1010')
-            pimPage.validateGrid().then((message) => {
+        it('Delete Employee success', () => {
+            pim.searchEmployee('Teste Automation')
+            pim.clickSearch()
+            pim.validateGrid().then((message) => {
                 expect(message).to.equal('1010')
             })
-            // pimPage.clickDelete()
-            // pimPage.validateMessSuccess().then((message) => {
-            //     expect(message).eq('Successfully Deleted')
-            // })
+            pim.clickDelete()
+            pim.validateMessSuccess().then((message) => {
+                expect(message).eq('Successfully Deleted')
+            })
         })
 
     })
