@@ -203,4 +203,4 @@ module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
             click_text, carregaPage, set_Index, clickForce, click_indexForce, clear_index
-}
+};

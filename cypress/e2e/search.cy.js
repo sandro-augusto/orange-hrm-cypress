@@ -8,6 +8,7 @@ describe('Validate menu search', () => {
         })
         
         it('Search by Admin', () => {
+
             home.validateResultSearch('Admin').then((mensagem) => {
                 expect(mensagem).to.eq("Admin")
             })

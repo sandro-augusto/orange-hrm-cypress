@@ -1,3 +1,4 @@
+
 import home from "../support/pages/homePage";
 import admin from "../support/pages/adminPage";
 
@@ -14,7 +15,7 @@ describe('Admin', () => {
             admin.clickDelete()
         })
 
-        it('Validate Admin search Username field', () => {
+        it.only('Validate Admin search Username field', () => {
             admin.ValidateSearchAdmin('Username').then((mensagem) => {
                 expect(mensagem).to.eq('Guilherme')
             })
@@ -42,7 +43,8 @@ describe('Admin', () => {
     context('Admin validations fields',() => {
         beforeEach(() => {
             cy.LoginSucesso()
-
+            homePage.ValidateOptionMenu('PIM')
+            cy.registerEmployee()
         })
 
         afterEach(() => {
@@ -56,7 +58,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             admin.clickSave()
             admin.validateAlert("Successfully Saved")
             })
@@ -66,7 +68,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin", "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("Admin", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -74,7 +76,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("ESS", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("ESS", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -82,7 +84,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("ESS", "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("ESS", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -90,7 +92,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations(null, "Neha  Shimpi", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations(null, "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -98,7 +100,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin", "Neha  Shimpi", null, "Guilherme", "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("Admin", "Teste Automation", null, "Guilherme", "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -114,7 +116,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin", "Neha  Shimpi", "Enabled", null, "Mypassword1$", "Mypassword1$")
+            admin.fillInInformations("Admin", "Teste Automation", "Enabled", null, "Mypassword1$", "Mypassword1$")
             })
         })
 
@@ -122,7 +124,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin","Neha  Shimpi", "Enabled", "Guilherme", null, "Mypassword1$")
+            admin.fillInInformations("Admin","Teste Automation", "Enabled", "Guilherme", null, "Mypassword1$")
             })
         })
 
@@ -130,7 +132,7 @@ describe('Admin', () => {
             home.ValidateOptionMenu('Admin').then((mensagem) => {
                 expect(mensagem).to.eq('System Users')
             admin.clickAdd()
-            admin.fillInInformations("Admin", "Neha  Shimpi", "Enabled", "Guilherme", "Mypassword1$", null)
+            admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", null)
             })
         })
 

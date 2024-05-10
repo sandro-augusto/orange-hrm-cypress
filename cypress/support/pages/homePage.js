@@ -54,7 +54,7 @@ export default {
           }
     },
 
-    validaUrlAdmin() {
+    validateUrlAdmin() {
         return cy.url()
     },
 

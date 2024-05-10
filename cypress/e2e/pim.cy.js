@@ -10,9 +10,23 @@ describe('PIM', () => {
         })
 
         it('Add Employee success', () => {
+            pim.clickAdd()
             pim.fillInformationsPIM('Teste', 'Automation', 'Employee', '1010')
-            pim.validateMessSuccess().then((mensagem) => {
-                expect(mensagem).eq('Successfully Saved')
+            pim.clickSave()
+            pim.validateMessSuccess().then((message) => {
+                expect(message).eq('Successfully Saved')
+            })
+        })
+
+        it('Delete Employee success', () => {
+            pim.searchEmployee('Teste Automation')
+            pim.clickSearch()
+            pim.validateGrid().then((message) => {
+                expect(message).to.equal('1010')
+            })
+            pim.clickDelete()
+            pim.validateMessSuccess().then((message) => {
+                expect(message).eq('Successfully Deleted')
             })
         })
 
