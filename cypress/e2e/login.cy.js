@@ -67,8 +67,5 @@ describe('Access the Orange HRM Page to perform Login validations', () => {
             expect(message).eq('Invalid credentials')
           })
         })
-
-
     })
-});
-
+})

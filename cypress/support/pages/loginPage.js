@@ -3,7 +3,6 @@ const {click, set, carregaPage, waitElement, get_text_index, get_text } = requir
 
 export default {
     accessPage() {
-        // Para usar as url's dos ambientes tem que deixar apenas a "/"
         carregaPage(el.url)
     },
 

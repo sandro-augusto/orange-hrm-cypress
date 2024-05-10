@@ -2,7 +2,6 @@ import { clear_index, click, get_text, set_Index } from "../actions"
 let el = require('../elements/pimElements').EMPLOYEE
 
 export default {
-
     fillInformationsPIM(firstname, middlename, lastname, employeeId) {
         click(el.btnAdd)
         set_Index(el.inputFields, firstname, 0)
@@ -16,7 +15,4 @@ export default {
     validateMessSuccess() {
         return get_text(el.alertSucess)
     }
-
-
-
 }
