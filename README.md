@@ -46,7 +46,7 @@ yarn cypress run
 | Directory                | Purpose                                                                         |
 |--------------------------|-----------------------------------------------------------------------------------|
 | `e2e/`  | All the steps that were implemented in the `pages` |
-| `support/pages/`  | Page objects or modules, such as `cadastroPage.js`, containing related methods.|
+| `support/pages/`  | Page objects or modules, such as `registerPage.js`, containing related methods.|
 | `support/elements/`      | Definitions of common elements used on pages, `homeElements.js`. |
 | `cypress.json`           | Cypress main configuration file where global settings for testing can be defined. |
 
