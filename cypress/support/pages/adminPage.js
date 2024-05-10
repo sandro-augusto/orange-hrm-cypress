@@ -51,10 +51,9 @@ export default {
         }
     },
 
-    ValidateSearchAdmin(option, employeeName) {
+    ValidateSearchAdmin(option) {
         switch(option){
             case 'Username':
-                cy.scrollTo('top', { scrollBehavior: false });
                 set_Index(el.inputUser, 'Guilherme', 1)
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
@@ -67,7 +66,7 @@ export default {
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 3)
             case 'EmployeeName':
-                set(el.inputEmployeeName, employeeName) 
+                set(el.inputEmployeeName, 'Teste Automation') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)

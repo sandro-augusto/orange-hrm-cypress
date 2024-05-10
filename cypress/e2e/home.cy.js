@@ -1,108 +1,108 @@
 import homePage from "../support/pages/homePage";
 
-describe('Validar a HomePage ', () => {
+describe('Validate the HomePage ', () => {
 
     context('Home validações',() => {
         beforeEach(() => {
             cy.LoginSucesso()
         })
 
-        it('Validar a opção Admin do Menu', () => {
-            homePage.ValidateOptionMenu('Admin').then((mensagem) => {
-                expect(mensagem).to.eq('System Users')
+        it('Validate the Menu Admin option', () => {
+            homePage.ValidateOptionMenu('Admin').then((message) => {
+                expect(message).eq('System Users')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
-            })
-        })
-
-        it('Validar a opção PIM do Menu', () => {
-            homePage.ValidateOptionMenu('PIM').then((mensagem) => {
-                expect(mensagem).to.eq('Employee Information')
-            })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers')
             })
         })
 
-        it('Validar a opção Leave do Menu', () => {
-            homePage.ValidateOptionMenu('Leave').then((mensagem) => {
-                expect(mensagem).to.eq('Leave List')
+        it('Validate the Menu PIM option', () => {
+            homePage.ValidateOptionMenu('PIM').then((message) => {
+                expect(message).eq('Employee Information')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList')
-            })
-        })
-
-        it('Validar a opção Time do Menu', () => {
-            homePage.ValidateOptionMenu('Time').then((mensagem) => {
-                expect(mensagem).to.eq('Select Employee')
-            })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList')
             })
         })
 
-        it('Validar a opção Recruitment do Menu', () => {
-            homePage.ValidateOptionMenu('Recruitment').then((mensagem) => {
-                expect(mensagem).to.eq('Candidates')
+        it('Validate the Menu Leave option', () => {
+            homePage.ValidateOptionMenu('Leave').then((message) => {
+                expect(message).eq('Leave List')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
-            })
-        })
-
-        it('Validar a opção Performance do Menu', () => {
-            homePage.ValidateOptionMenu('Performance').then((mensagem) => {
-                expect(mensagem).to.eq('Employee Reviews')
-            })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/leave/viewLeaveList')
             })
         })
 
-        it('Validar a opção DashBoard do Menu', () => {
-            homePage.ValidateOptionMenu('DashBoard').then((mensagem) => {
-                expect(mensagem).to.eq('Time at Work')
+        it('Validate the Menu Time option', () => {
+            homePage.ValidateOptionMenu('Time').then((message) => {
+                expect(message).eq('Select Employee')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
-            })
-        })
-
-        it('Validar a opção Directory do Menu', () => {
-            homePage.ValidateOptionMenu('Directory').then((mensagem) => {
-                expect(mensagem).to.eq('Directory')
-            })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/time/viewEmployeeTimesheet')
             })
         })
 
-        it('Validar a opção Maintenance do Menu', () => {
-            homePage.ValidateOptionMenu('Maintenance').then((mensagem) => {
-                expect(mensagem).to.eq('Administrator Access')
+        it('Validate the Menu Recruitment option', () => {
+            homePage.ValidateOptionMenu('Recruitment').then((message) => {
+                expect(message).eq('Candidates')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee')
-            })
-        })
-
-        it('Validar a opção Claim do Menu', () => {
-            homePage.ValidateOptionMenu('Claim').then((mensagem) => {
-                expect(mensagem).to.eq('Employee Claims')
-            })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates')
             })
         })
 
-        it('Validar a opção Buzz do Menu', () => {
-            homePage.ValidateOptionMenu('Buzz').then((mensagem) => {
-                expect(mensagem).to.eq('Buzz Newsfeed')
+        it('Validate the Menu Performance option', () => {
+            homePage.ValidateOptionMenu('Performance').then((message) => {
+                expect(message).eq('Employee Reviews')
             })
-            homePage.validaUrlAdmin().then((url) => {
-                expect(url).to.eq('https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz')
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/performance/searchEvaluatePerformanceReview')
+            })
+        })
+
+        it('Validate the Menu DashBoard option', () => {
+            homePage.ValidateOptionMenu('DashBoard').then((message) => {
+                expect(message).eq('Time at Work')
+            })
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index')
+            })
+        })
+
+        it('Validate the Menu Directory option', () => {
+            homePage.ValidateOptionMenu('Directory').then((message) => {
+                expect(message).eq('Directory')
+            })
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/directory/viewDirectory')
+            })
+        })
+
+        it('Validate the Menu Maintenance option', () => {
+            homePage.ValidateOptionMenu('Maintenance').then((message) => {
+                expect(message).eq('Administrator Access')
+            })
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/maintenance/purgeEmployee')
+            })
+        })
+
+        it('Validate the Menu Claim option', () => {
+            homePage.ValidateOptionMenu('Claim').then((message) => {
+                expect(message).eq('Employee Claims')
+            })
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/claim/viewAssignClaim')
+            })
+        })
+
+        it('Validate the Menu Buzz option', () => {
+            homePage.ValidateOptionMenu('Buzz').then((message) => {
+                expect(message).eq('Buzz Newsfeed')
+            })
+            homePage.validateUrlAdmin().then((url) => {
+                expect(url).eq('https://opensource-demo.orangehrmlive.com/web/index.php/buzz/viewBuzz')
             })
         })
     
