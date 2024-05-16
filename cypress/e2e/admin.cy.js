@@ -1,18 +1,22 @@
 
 import home from "../support/pages/homePage";
 import admin from "../support/pages/adminPage";
+import pim from  "../support/pages/pimPage";
 
 describe('Admin', () => {
 
     context('Admin validations fields',() => {
         beforeEach(() => {
             cy.loginSuccess()
+            home.ValidateOptionMenu('PIM')
+            cy.registerEmployee()
             home.ValidateOptionMenu('Admin')
             cy.registerUser()
         })
 
         afterEach(() => {
             admin.clickDelete()
+            pim.clickDelete()
         })
 
         it.only('Validate Admin search Username field', () => {
@@ -42,7 +46,7 @@ describe('Admin', () => {
 
     context('Admin validations fields',() => {
         beforeEach(() => {
-            cy.LoginSucesso()
+            cy.loginSuccess()
             homePage.ValidateOptionMenu('PIM')
             cy.registerEmployee()
         })

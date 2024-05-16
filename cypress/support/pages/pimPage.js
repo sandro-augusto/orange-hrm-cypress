@@ -42,6 +42,4 @@ export default {
         cy.wait(2000)
         click(el.btnConfirmDelete)
     },
-
-
 }
