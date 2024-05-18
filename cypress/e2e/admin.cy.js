@@ -9,15 +9,12 @@ describe("Admin", () => {
       cy.registerEmployee()
       home.ValidateOptionMenu("Admin")
       cy.registerUser()
-    });
+    })
 
     afterEach(() => {
       admin.clickDelete()
-    });
-
-    after(() => {
       cy.deleteEmployee()
-    });
+    })
 
     it("Validate Admin search Username field", () => {
       admin.ValidateSearchAdmin("Username").then((mensagem) => {
@@ -50,54 +47,69 @@ describe("Admin", () => {
       home.ValidateOptionMenu("PIM")
       cy.registerEmployee()
     })
-    
-    after(() => {
+
+    afterEach(() => {
       cy.deleteEmployee()
     })
 
-    it.only("Add an admin successfully", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
-        expect(mensagem).to.eq("System Users")
+    it("Add an admin successfully", () => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
+          expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
-        cy.deleteUser()
+        admin.ValidateSearchAdmin("Username").then((mensagem) => {
+          expect(mensagem).to.eq("Guilherme")
+          admin.clickDelete()
       })
     })
+  })
 
     it("Add an admin disabled", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
+        admin.ValidateSearchAdmin("Username").then((mensagem) => {
+          expect(mensagem).to.eq("Guilherme")
+          admin.clickDelete()
       })
     })
+  })
 
     it("Add an ESS successfully", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("ESS", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
+        admin.ValidateSearchAdmin("Username").then((mensagem) => {
+          expect(mensagem).to.eq("Guilherme")
+          admin.clickDelete()
+        })
       })
     })
 
     it("Register admin with ESS disabled", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("ESS", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
+        admin.ValidateSearchAdmin("Username").then((mensagem) => {
+          expect(mensagem).to.eq("Guilherme")
+          admin.clickDelete()
+        })
       })
     })
 
     it("Register admin with blank role", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations(null, "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
@@ -109,10 +121,10 @@ describe("Admin", () => {
     })
     
     it("Register admin with blank employee name", () => {
-        home.ValidateOptionMenu("Admin").then((mensagem) => {
+          home.ValidateOptionMenu("Admin").then((mensagem) => {
           expect(mensagem).to.eq("System Users")
           admin.clickAdd()
-          admin.fillInInformations("Admin",null,"Enabled","Guilherme","Mypassword1$","Mypassword1$")
+          admin.fillInInformations("Admin", null, "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
           admin.clickSave()
           admin.validateAlertError(1).then((mensagem) => {
             expect(mensagem).to.eq("Required")
@@ -120,20 +132,20 @@ describe("Admin", () => {
         })
       })
 
-    it("Add an blank status", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+    it.only("Add an blank status", () => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", null, "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
-        admin.validateAlertError(1).then((mensagem) => {
+        admin.validateAlertError(2).then((mensagem) => {
           expect(mensagem).to.eq("Required")
         })
       })
     })
 
     it("Register admin with blank username", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Enabled", null, "Mypassword1$", "Mypassword1$")
@@ -145,7 +157,7 @@ describe("Admin", () => {
     })
 
     it("Register admin with blank password", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", null, "Mypassword1$")
@@ -157,7 +169,7 @@ describe("Admin", () => {
     })
 
     it("Register admin with confirm password", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", null)
@@ -169,7 +181,7 @@ describe("Admin", () => {
     })
 
     it("Register admin with blank fields", () => {
-      home.ValidateOptionMenu("Admin").then((mensagem) => {
+        home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users");
         admin.clickAdd()
         admin.fillInInformations(null, null, null, null, null, null)

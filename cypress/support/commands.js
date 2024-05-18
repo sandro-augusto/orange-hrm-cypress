@@ -17,7 +17,7 @@ Cypress.Commands.add("loginSuccess", () => {
 
 //  ADMIN
 Cypress.Commands.add("registerUser", () => {
-  home.ValidateOptionMenu("Admin");
+  home.ValidateOptionMenu("Admin")
   admin.clickAdd();
   admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
   admin.clickSave()
@@ -48,14 +48,5 @@ Cypress.Commands.add("deleteEmployee", () => {
   pim.clickDelete()
   pim.validateMessSuccess().then((message) => {
     expect(message).eq("Successfully Deleted")
-  })
-
-  Cypress.Commands.add("deleteUser", () => {
-    cy.wait(5000)
-    home.ValidateOptionMenu("ADMIN");
-    admin.ValidateSearchAdmin("Username", "Guilherme").then((mensagem) => {
-      expect(mensagem).to.eq("Guilherme")
-      admin.clickDelete()
-    })
   })
 })

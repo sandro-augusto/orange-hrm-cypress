@@ -106,8 +106,18 @@ export default {
         click_index(el.buttonSearch, 0)
     },
 
+    searchUser(user){
+        set_Index(el.employeeSupervisor, user, 1)
+        cy.wait(2000)
+        click_index(el.optionSelect, 0)
+    },
+
     clickSearch() {
         click_index(el.buttonSearch, 1)
+    },
+
+    validateGrid() {
+        return get_text_index(el.gridId, 1)       
     },
 
     validateAlert() {
