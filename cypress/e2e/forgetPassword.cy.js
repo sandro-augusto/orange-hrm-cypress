@@ -20,7 +20,7 @@ describe("Validate or forgot my password", () => {
         expect(message).eq("Reset Password link sent successfully")
       })
     })
-    
+
     it("Forgot my password with blank username", () => {
       login.clickForgetPassword()
       resetPassword.validatePasswordResetPageTitle().then((message) => {

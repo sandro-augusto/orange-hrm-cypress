@@ -52,30 +52,33 @@ export default {
     },
 
     ValidateSearchAdmin(option) {
+        cy.wait(5000)
         switch(option){
             case 'Username':
                 set_Index(el.inputUser, 'Guilherme', 1)
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
-                return get_text_index(el.optionGrid, 2)
+                return get_text_index(el.optionGrid, 1)
             case 'UserRole':
+                set_Index(el.inputUser, 'Guilherme', 1)
                 click_index(el.fieldSelect, 0)
                 click_index(el.optionSelect, 1)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
-                return get_text_index(el.optionGrid, 3)
+                return get_text_index(el.optionGrid, 2)
             case 'EmployeeName':
-                set(el.inputEmployeeName, 'Teste Automation') 
+                set(el.inputEmployeeName, 'Teste Automation Employee') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)
-                return get_text_index(el.optionGrid, 4)
+                return get_text_index(el.optionGrid, 3)
             case 'Status':
+                set_Index(el.inputUser, 'Guilherme', 1)
                 click_index(el.fieldSelect, 1)
                 click_index(el.optionSelect, 1)  
                 click_index(el.buttonSearch, 1)
-                return get_text_index(el.optionGrid, 5)
+                return get_text_index(el.optionGrid, 4)
             default:
                 'Favor informar uma opção válida'
         }
@@ -94,7 +97,7 @@ export default {
     },
 
     clickDelete() {
-        click(el.btnDelete)
+        click_index(el.btnDelete, 0)
         cy.wait(2000)
         click(el.btnConfirmDelete)
     },
@@ -109,5 +112,9 @@ export default {
 
     validateAlert() {
         return get_text(el.alertSuccess)
+    },
+
+    validateAlertError(index) {
+        return get_text_index(el.alertRequired, index)
     }
 }

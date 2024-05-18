@@ -29,6 +29,5 @@ describe('PIM', () => {
                 expect(message).eq('Successfully Deleted')
             })
         })
-
     })
 })
