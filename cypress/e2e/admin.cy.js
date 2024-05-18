@@ -186,7 +186,7 @@ describe("Admin", () => {
         admin.clickAdd()
         admin.fillInInformations(null, null, null, null, null, null)
         admin.clickSave()
-        admin.validateAlertError(5).then((mensagem) => {
+        admin.validateAlertError(6).then((mensagem) => {
           expect(mensagem).to.eq("Passwords do not match")
         })
       })
