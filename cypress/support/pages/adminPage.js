@@ -124,7 +124,7 @@ export default {
         return get_text(el.alertSuccess)
     },
 
-    validateAlertError(index) {
-        return get_text_index(el.alertRequired, index)
+    validateAlertError() {
+        return get_text(el.alertRequired)
     }
 }
