@@ -16,7 +16,6 @@ describe("Admin", () => {
     beforeEach(() => {
       cy.loginSuccess()
       home.ValidateOptionMenu("Admin")
-
     })
 
     after(() => {
