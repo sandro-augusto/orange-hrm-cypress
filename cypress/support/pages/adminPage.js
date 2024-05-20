@@ -125,6 +125,17 @@ export default {
     },
 
     validateAlertError() {
+        cy.wait(1000)
         return get_text(el.alertRequired)
+    },
+
+    validateAlertErrors(index) {
+        cy.wait(1000)
+        return get_text_index(el.alertRequired, index)
+    },
+
+    logout() {
+        click(el.logoutMenu)
+        click_index(el.btnOptions, 3)
     }
 }

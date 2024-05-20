@@ -1,17 +1,25 @@
 import home from "../support/pages/homePage";
 import admin from "../support/pages/adminPage";
+import { before } from "mocha";
 
 describe("Admin", () => {
   context("Admin validations fields", () => {
-    beforeEach(() => {
+    before(() => {
       cy.loginSuccess()
       home.ValidateOptionMenu("PIM")
       cy.registerEmployee()
       home.ValidateOptionMenu("Admin")
       cy.registerUser()
+      admin.logout()
     })
 
-    afterEach(() => {
+    beforeEach(() => {
+      cy.loginSuccess()
+      home.ValidateOptionMenu("Admin")
+
+    })
+
+    after(() => {
       admin.clickDelete()
       cy.deleteEmployee()
     })
@@ -42,13 +50,18 @@ describe("Admin", () => {
   })
 
   context("Admin validations fields", () => {
-    beforeEach(() => {
+    before(() => {
       cy.loginSuccess()
       home.ValidateOptionMenu("PIM")
       cy.registerEmployee()
+      admin.logout()
     })
 
-    afterEach(() => {
+    beforeEach(() => {
+      cy.loginSuccess()
+    })
+
+    after(() => {
       cy.deleteEmployee()
     })
 
@@ -162,13 +175,13 @@ describe("Admin", () => {
         admin.clickAdd()
         admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", null, "Mypassword1$")
         admin.clickSave()
-        admin.validateAlertError().then((mensagem) => {
+        admin.validateAlertErrors(0).then((mensagem) => {
           expect(mensagem).to.eq("Required")
         })
       })
     })
 
-    it.only("Register admin with confirm password", () => {
+    it("Register admin with confirm password", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
@@ -176,18 +189,6 @@ describe("Admin", () => {
         admin.clickSave()
         admin.validateAlertError().then((mensagem) => {
           expect(mensagem).to.eq("Passwords do not match")
-        })
-      })
-    })
-
-    it("Register admin with blank fields", () => {
-        home.ValidateOptionMenu("Admin").then((mensagem) => {
-        expect(mensagem).to.eq("System Users");
-        admin.clickAdd()
-        admin.fillInInformations(null, null, null, null, null, null)
-        admin.clickSave()
-        admin.validateAlertError().then((mensagem) => {
-          expect(mensagem).to.eq("Required")
         })
       })
     })

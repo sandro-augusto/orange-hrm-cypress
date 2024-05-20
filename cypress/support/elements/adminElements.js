@@ -13,4 +13,6 @@ export const ADMIN = {
   btnDelete: ".oxd-icon.bi-trash",
   btnConfirmDelete: ".oxd-button--label-danger",
   alertRequired: ".oxd-input-field-error-message",
+  logoutMenu: ".oxd-userdropdown-name",
+  btnOptions: ".oxd-userdropdown-link"
 }
