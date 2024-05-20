@@ -1,9 +1,9 @@
 let el = require('../elements/loginElements').LOGIN
-const {click, set, carregaPage, waitElement, get_text_index, get_text } = require('../actions');
+const {click, set, loadPage, waitElement, get_text_index, get_text } = require('../actions');
 
 export default {
     accessPage() {
-        carregaPage(el.url)
+        loadPage(el.url)
     },
 
     fillLogin(username, password) {
@@ -31,15 +31,15 @@ export default {
         click(el.linkForgetPass)
     },
 
-    validateMessError() {
-        return get_text_index(el.validateMessError, 0)
+    validateErrorMess() {
+        return get_text_index(el.validateErrorMess, 0)
     },
 
-    validateMessError2() {
-        return get_text_index(el.validateMessError, 1)
+    validateErrorMess2() {
+        return get_text_index(el.validateErrorMess, 1)
     },
 
-    validateAlertError() {
-        return get_text(el.alertErro)
+    validateErrorAlert() {
+        return get_text(el.alertError)
     }
 }

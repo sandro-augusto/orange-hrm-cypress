@@ -36,7 +36,7 @@ const cancelCallAPI = () => {
     }
 }
 
-const validateElNotVisible = () => {
+const ValidateElNotVisible = () => {
     cy.document().then((doc) => {
         const visibleElements = Array.from(doc.querySelectorAll('*')).filter((el) => {
           const style = getComputedStyle(el);
@@ -56,6 +56,6 @@ const pressEnterIndex = (el, index) => {
 
 
 module.exports = {
-    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, validateElNotVisible,
+    randomName, randomEmail, randomUserName, randomPassword, cancelCallAPI, randomNumeric, upload, ValidateElNotVisible,
     pressEnter, pressEnterIndex
 }

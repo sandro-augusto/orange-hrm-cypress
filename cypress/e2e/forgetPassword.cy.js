@@ -14,7 +14,7 @@ describe("Validate or forgot my password", () => {
         console.log(message)
         expect(message).eq("Reset Password")
       })
-      resetPassword.fillInUsername("usernameTeste")
+      resetPassword.fillInUsername("usernameTest")
       resetPassword.clickResetPassword()
       resetPassword.validatePasswordResetPageTitle().then((message) => {
         expect(message).eq("Reset Password link sent successfully")

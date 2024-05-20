@@ -6,7 +6,7 @@ describe("Validate the HomePage", () => {
       cy.loginSuccess()
     })
 
-    it("Validate the Menu Admin option", () => {
+    it("Validate the Admin menu option", () => {
       home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
       })
@@ -17,7 +17,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the PIM Menu option", () => {
+    it("Validate the PIM menu option", () => {
       home.ValidateOptionMenu("PIM").then((mensagem) => {
         expect(mensagem).to.eq("Employee Information")
       })
@@ -39,7 +39,7 @@ describe("Validate the HomePage", () => {
       });
     });
 
-    it("Validate the Menu Time option", () => {
+    it("Validate the Time menu option", () => {
       home.ValidateOptionMenu("Time").then((mensagem) => {
         expect(mensagem).to.eq("Select Employee")
       })
@@ -50,7 +50,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Recruitment option in the Menu", () => {
+    it("Validate the Recruitment menu option", () => {
       home.ValidateOptionMenu("Recruitment").then((mensagem) => {
         expect(mensagem).to.eq("Candidates")
       })
@@ -61,7 +61,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Menu Performance option", () => {
+    it("Validate the Performance menu option", () => {
       home.ValidateOptionMenu("Performance").then((mensagem) => {
         expect(mensagem).to.eq("Employee Reviews")
       })
@@ -72,7 +72,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Menu DashBoard option", () => {
+    it("Validate the DashBoard menu option", () => {
       home.ValidateOptionMenu("DashBoard").then((mensagem) => {
         expect(mensagem).to.eq("Time at Work")
       })
@@ -83,7 +83,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Menu Directory option", () => {
+    it("Validate the Directory menu option", () => {
       home.ValidateOptionMenu("Directory").then((mensagem) => {
         expect(mensagem).to.eq("Directory")
       })
@@ -94,7 +94,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Menu Maintenance option", () => {
+    it("Validate the Maintenance menu option", () => {
       home.ValidateOptionMenu("Maintenance").then((mensagem) => {
         expect(mensagem).to.eq("Administrator Access")
       })
@@ -116,7 +116,7 @@ describe("Validate the HomePage", () => {
       })
     })
 
-    it("Validate the Menu Buzz option", () => {
+    it("Validate the Buzz menu option", () => {
       home.ValidateOptionMenu("Buzz").then((mensagem) => {
         expect(mensagem).to.eq("Buzz Newsfeed")
       })

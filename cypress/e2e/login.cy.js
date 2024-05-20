@@ -21,7 +21,7 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank UserName field", () => {
       login.fillLogin(null, "admin123")
       login.clickLogin()
-      login.validateMessError().then((message) => {
+      login.validateErrorMess().then((message) => {
         expect(message).eq("Required")
       })
     })
@@ -29,7 +29,7 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank Password field", () => {
       login.fillLogin("Admin", null)
       login.clickLogin()
-      login.validateMessError().then((message) => {
+      login.validateErrorMess().then((message) => {
         expect(message).eq("Required")
       })
     })
@@ -37,10 +37,10 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank UserName and Password field", () => {
       login.fillLogin(null, null)
       login.clickLogin()
-      login.validateMessError().then((mesOne) => {
+      login.validateErrorMess().then((mesOne) => {
         expect(mesOne).eq("Required")
       })
-      login.validateMessError2().then((mesTwo) => {
+      login.validateErrorMess2().then((mesTwo) => {
         expect(mesTwo).eq("Required")
       })
     })
@@ -48,7 +48,7 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank UserName invalid", () => {
       login.fillLogin("@$%#@!!@", "admin123")
       login.clickLogin()
-      login.validateAlertError().then((message) => {
+      login.validateErrorAlert().then((message) => {
         expect(message).eq("Invalid credentials")
       })
     })
@@ -56,7 +56,7 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank Password invalid", () => {
       login.fillLogin("Admin", "@$%#@!!@")
       login.clickLogin()
-      login.validateAlertError().then((message) => {
+      login.validateErrorAlert().then((message) => {
         expect(message).eq("Invalid credentials")
       })
     })
@@ -64,7 +64,7 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Login with blank UserName and Password invalid", () => {
       login.fillLogin("@((#!@$$@", "@$%#@!!@")
       login.clickLogin()
-      login.validateAlertError().then((message) => {
+      login.validateErrorAlert().then((message) => {
         expect(message).eq("Invalid credentials")
       })
     })

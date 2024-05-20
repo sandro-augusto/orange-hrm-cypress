@@ -19,7 +19,7 @@ Cypress.Commands.add("loginSuccess", () => {
 Cypress.Commands.add("registerUser", () => {
   home.ValidateOptionMenu("Admin")
   admin.clickAdd();
-  admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+  admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
   admin.clickSave()
   admin.validateAlert().then((message) => {
     expect(message).eq("Successfully Saved");
@@ -29,7 +29,7 @@ Cypress.Commands.add("registerUser", () => {
 //  PIM EMPLOYEE
 Cypress.Commands.add("registerEmployee", () => {
   pim.clickAdd()
-  pim.fillInformationsPIM("Teste", "Automation", "Employee", "1010")
+  pim.fillInformationsPIM("Test", "Automation", "Employee", "1010")
   pim.clickSave()
   pim.validateMessSuccess().then((message) => {
     expect(message).eq("Successfully Saved")
@@ -40,7 +40,7 @@ Cypress.Commands.add("registerEmployee", () => {
 Cypress.Commands.add("deleteEmployee", () => {
   cy.wait(5000)
   home.ValidateOptionMenu("PIM")
-  pim.searchEmployee("Teste Automation")
+  pim.searchEmployee("Test Automation")
   pim.clickSearch()
   pim.validateGrid().then((message) => {
     expect(message).to.equal("1010")

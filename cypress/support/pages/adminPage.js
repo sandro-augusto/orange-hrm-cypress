@@ -1,6 +1,6 @@
 let el = require('../elements/adminElements').ADMIN
 const {click, set, waitElement, get_text_index, get_text, click_index, set_Index } = require('../actions');
-const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
+const { ValidateElNotVisible, pressEnterIndex } = require('../utils')
 
 export default {
     fillInInformations(userRole, employeeName, status, username, password, confirmPassword) {
@@ -68,7 +68,7 @@ export default {
                 cy.wait(1000)
                 return get_text_index(el.optionGrid, 2)
             case 'EmployeeName':
-                set(el.inputEmployeeName, 'Teste Automation Employee') 
+                set(el.inputEmployeeName, 'Test Employee') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)

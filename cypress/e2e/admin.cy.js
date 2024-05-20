@@ -36,7 +36,7 @@ describe("Admin", () => {
 
     it("Validate Admin search EmployeeName field", () => {
       admin.ValidateSearchAdmin("EmployeeName").then((mensagem) => {
-        expect(mensagem).to.eq("Teste Employee")
+        expect(mensagem).to.eq("Test Employee")
       })
     })
 
@@ -67,7 +67,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
           expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
         admin.ValidateSearchAdmin("Username").then((mensagem) => {
@@ -81,7 +81,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("Admin", "Test Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
         admin.ValidateSearchAdmin("Username").then((mensagem) => {
@@ -95,7 +95,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("ESS", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("ESS", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
         admin.ValidateSearchAdmin("Username").then((mensagem) => {
@@ -109,7 +109,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("ESS", "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("ESS", "Test Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlert("Successfully Saved")
         admin.ValidateSearchAdmin("Username").then((mensagem) => {
@@ -123,7 +123,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations(null, "Teste Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations(null, "Test Automation", "Disabled", "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlertError().then((mensagem) => {
           expect(mensagem).to.eq("Required")
@@ -147,7 +147,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", null, "Guilherme", "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("Admin", "Test Automation", null, "Guilherme", "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlertError().then((mensagem) => {
           expect(mensagem).to.eq("Required")
@@ -159,7 +159,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", "Enabled", null, "Mypassword1$", "Mypassword1$")
+        admin.fillInInformations("Admin", "Test Automation", "Enabled", null, "Mypassword1$", "Mypassword1$")
         admin.clickSave()
         admin.validateAlertError().then((mensagem) => {
           expect(mensagem).to.eq("Required")
@@ -171,7 +171,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", null, "Mypassword1$")
+        admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", null, "Mypassword1$")
         admin.clickSave()
         admin.validateAlertErrors(0).then((mensagem) => {
           expect(mensagem).to.eq("Required")
@@ -183,7 +183,7 @@ describe("Admin", () => {
         home.ValidateOptionMenu("Admin").then((mensagem) => {
         expect(mensagem).to.eq("System Users")
         admin.clickAdd()
-        admin.fillInInformations("Admin", "Teste Automation", "Enabled", "Guilherme", "Mypassword1$", null)
+        admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", null)
         admin.clickSave()
         admin.validateAlertError().then((mensagem) => {
           expect(mensagem).to.eq("Passwords do not match")
