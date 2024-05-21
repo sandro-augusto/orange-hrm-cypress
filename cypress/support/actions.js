@@ -20,7 +20,7 @@ function waitElement_index(el, index) {
     return waitElement_index;
 }
 
-function carregaPage(url) {
+function loadPage(url) {
     try {
         cy.log(`Waiting to load ${url}`)
         cy.visit(url)
@@ -202,5 +202,5 @@ function splitIn(el, index) {
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, carregaPage, set_Index, clickForce, click_indexForce, clear_index
-}
+            click_text, loadPage, set_Index, clickForce, click_indexForce, clear_index
+};

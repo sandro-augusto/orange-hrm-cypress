@@ -1,6 +1,6 @@
 <h1 align="center"> FRONT-END AUTOMATION - ORANGE HRM 🍊</h1>
 
-![STATUS](https://img.shields.io/static/v1?label=STATUS&message=UNDER%20CONSTRUCTION&color=yellow&style=for-the-badge)
+![STATUS](https://img.shields.io/static/v1?label=STATUS&message=%20Finished&color=&style=for-the-badge)
 
 
 ## 💬 About the project

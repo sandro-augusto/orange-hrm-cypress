@@ -1,6 +1,6 @@
 let el = require('../elements/adminElements').ADMIN
 const {click, set, waitElement, get_text_index, get_text, click_index, set_Index } = require('../actions');
-const { validarElNaoVisiveis, pressEnterIndex } = require('../utils')
+const { ValidateElNotVisible, pressEnterIndex } = require('../utils')
 
 export default {
     fillInInformations(userRole, employeeName, status, username, password, confirmPassword) {
@@ -51,32 +51,34 @@ export default {
         }
     },
 
-    ValidateSearchAdmin(option, employeeName) {
+    ValidateSearchAdmin(option) {
+        cy.wait(5000)
         switch(option){
             case 'Username':
-                cy.scrollTo('top', { scrollBehavior: false });
                 set_Index(el.inputUser, 'Guilherme', 1)
                 cy.wait(1000)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
-                return get_text_index(el.optionGrid, 2)
+                return get_text_index(el.optionGrid, 1)
             case 'UserRole':
+                set_Index(el.inputUser, 'Guilherme', 1)
                 click_index(el.fieldSelect, 0)
                 click_index(el.optionSelect, 1)
                 click_index(el.buttonSearch, 1)
                 cy.wait(1000)
-                return get_text_index(el.optionGrid, 3)
+                return get_text_index(el.optionGrid, 2)
             case 'EmployeeName':
-                set(el.inputEmployeeName, employeeName) 
+                set(el.inputEmployeeName, 'Test Employee') 
                 cy.wait(2000)
                 click_index(el.optionEmployee, 0)
                 click_index(el.buttonSearch, 1)
-                return get_text_index(el.optionGrid, 4)
+                return get_text_index(el.optionGrid, 3)
             case 'Status':
+                set_Index(el.inputUser, 'Guilherme', 1)
                 click_index(el.fieldSelect, 1)
                 click_index(el.optionSelect, 1)  
                 click_index(el.buttonSearch, 1)
-                return get_text_index(el.optionGrid, 5)
+                return get_text_index(el.optionGrid, 4)
             default:
                 'Favor informar uma opção válida'
         }
@@ -95,7 +97,7 @@ export default {
     },
 
     clickDelete() {
-        click(el.btnDelete)
+        click_index(el.btnDelete, 0)
         cy.wait(2000)
         click(el.btnConfirmDelete)
     },
@@ -104,11 +106,36 @@ export default {
         click_index(el.buttonSearch, 0)
     },
 
+    searchUser(user){
+        set_Index(el.employeeSupervisor, user, 1)
+        cy.wait(2000)
+        click_index(el.optionSelect, 0)
+    },
+
     clickSearch() {
         click_index(el.buttonSearch, 1)
     },
 
+    validateGrid() {
+        return get_text_index(el.gridId, 1)       
+    },
+
     validateAlert() {
         return get_text(el.alertSuccess)
+    },
+
+    validateAlertError() {
+        cy.wait(1000)
+        return get_text(el.alertRequired)
+    },
+
+    validateAlertErrors(index) {
+        cy.wait(1000)
+        return get_text_index(el.alertRequired, index)
+    },
+
+    logout() {
+        click(el.logoutMenu)
+        click_index(el.btnOptions, 3)
     }
 }

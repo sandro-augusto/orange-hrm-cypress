@@ -1,4 +1,4 @@
 export const SEARCH = {
-    inputSearch: '.oxd-input',
-    resultSearch: '.oxd-main-menu-item'
+  inputSearch: ".oxd-input",
+  resultSearch: ".oxd-main-menu-item",
 }

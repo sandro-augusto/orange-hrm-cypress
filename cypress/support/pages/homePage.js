@@ -54,11 +54,11 @@ export default {
           }
     },
 
-    validaUrlAdmin() {
+    validateUrlAdmin() {
         return cy.url()
     },
 
-    validateResultSearch(menu) {
+    validateSearchResult(menu) {
         set(element.inputSearch, menu)
         return get_text(element.resultSearch)
     } 
