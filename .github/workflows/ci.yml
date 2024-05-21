@@ -27,3 +27,16 @@ jobs:
 
       - name: Run Cypress Tests
         run: npx cypress run || true
+
+      - name: Install Allure Report
+        run: npm add -D allure-cypress
+
+      - name: Generate Allure Report
+        run: npx allure serve allure-results
+
+      - name: Publish Allure Report
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+            name: cypress-e2e-report
+            path: allure-report
