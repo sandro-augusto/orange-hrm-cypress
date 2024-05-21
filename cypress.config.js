@@ -11,8 +11,8 @@ module.exports = defineConfig({
     downloads: false,
     experimentalRunAllSpecs: true,
     setupNodeEvents(on, config) {
-      allureWriter(on, config);
-        return config;
+      // allureWriter(on, config);
+      //   return config;
     },
   },
 });
