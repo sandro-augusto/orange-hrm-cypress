@@ -3,3 +3,5 @@
 /videos/*
 /screenshots
 *.mp4
+package.json
+package-lock.json
