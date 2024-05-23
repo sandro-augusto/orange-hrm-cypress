@@ -1,5 +1,5 @@
 const { defineConfig } = require("cypress");
-const { allureCypress } = require("allure-cypress/reporter");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   e2e: {
@@ -11,10 +11,7 @@ module.exports = defineConfig({
     downloads: false,
     experimentalRunAllSpecs: true,
     setupNodeEvents(on, config) {
-      allureCypress(on, {
-        resultsDir: "./allure-results",
-      })
-
+      allureWriter(on, config);
       return config;
     },
   },
