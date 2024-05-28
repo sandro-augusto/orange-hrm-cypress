@@ -161,20 +161,22 @@ describe("Admin", () => {
       })
     })
 
-    // it("Register admin with blank password", () => {
-    //   admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", null, null)
-    //   admin.clickSave()
-    //   admin.validateAlertErrors().then((mensagem) => {
-    //     expect(mensagem).eq("Required")
-    //   })
-    // })
+    it("Register admin with blank password", () => {
+      admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", null, null)
+      admin.clickSave()
+      admin.validateAlertErrors().then((texts) => {
+        const [msg1, msg2] = texts
+        expect(msg1).eq("Required")
+        expect(msg2).eq("Passwords do not match")
+      })
+    })
 
-    // it("Register admin with confirm password", () => { 
-    //   admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", null)
-    //   admin.clickSave()
-    //   admin.validateAlertError().then((mensagem) => {
-    //     expect(mensagem).to.eq("Passwords do not match")
-    //   })
-    // })
+    it("Register admin with blank confirm password", () => { 
+      admin.fillInInformations("Admin", "Test Automation", "Enabled", "Guilherme", "Mypassword1$", null)
+      admin.clickSave()
+      admin.validateAlertError().then((mensagem) => {
+        expect(mensagem).to.eq("Passwords do not match")
+      })
+    })
   })
 })
