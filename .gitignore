@@ -3,3 +3,4 @@
 /videos/*
 cypress/screenshots
 *.mp4
+*downloads

@@ -11,10 +11,8 @@ describe("Access the Orange HRM Page to perform Login validations", () => {
     it("Success Login", () => {
       login.fillLogin("Admin", "admin123")
       login.clickLogin()
-      home.validateURLHome().then((currentUrl) => {
-        expect(currentUrl).eq(
-          "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
-        )
+      home.validateHome().then((text) => {
+        expect(text).eq('Admin')
       })
     })
 

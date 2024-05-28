@@ -1,5 +1,5 @@
 let el = require('../elements/adminElements').ADMIN
-const {click, set, waitElement, get_text_index, get_text, click_index, set_Index } = require('../actions');
+const {click, set, waitElement, get_text_index, get_text, click_index, set_Index, get_texts } = require('../actions');
 const { ValidateElNotVisible, pressEnterIndex } = require('../utils')
 
 export default {
@@ -94,6 +94,8 @@ export default {
 
     clickSave() {
         click_index(el.btnSave, 1)
+        cy.wait(1500)
+        cy.screenshot()
     },
 
     clickDelete() {
@@ -129,9 +131,8 @@ export default {
         return get_text(el.alertRequired)
     },
 
-    validateAlertErrors(index) {
-        cy.wait(1000)
-        return get_text_index(el.alertRequired, index)
+    validateAlertErrors() {
+        return get_texts(el.alertRequired, 0, 1)
     },
 
     logout() {

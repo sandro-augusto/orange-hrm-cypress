@@ -19,7 +19,7 @@ describe('PIM', () => {
         })
 
         it('Delete Employee success', () => {
-            pim.searchEmployee('Test Automation')
+            pim.searchEmployee('1010')
             pim.clickSearch()
             pim.validateGrid().then((message) => {
                 expect(message).to.equal('1010')

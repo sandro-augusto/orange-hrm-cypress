@@ -1,14 +1,14 @@
 let el = require('../elements/homeElements').HOME
 let element = require('../elements/searchElements').SEARCH
-const { get_text, get_text_index, click, click_index, set } = require('../actions');
+const { get_text, get_text_index, click, click_index, set, waitElement } = require('../actions');
 
 export default {
     validaHome() {
         return get_text_index(el.validateElHome, 0)
     },
 
-    validateURLHome() {
-        return cy.url()
+    validateHome() {
+        return get_text_index(el.optionMenu, 0)
     },
 
     ValidateOptionMenu(option) {

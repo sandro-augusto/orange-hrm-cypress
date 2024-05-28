@@ -8,10 +8,8 @@ Cypress.Commands.add("loginSuccess", () => {
   login.validateLoginPage()
   login.fillLogin("Admin", "admin123")
   login.clickLogin()
-  home.validateURLHome().then((urlAtual) => {
-    expect(urlAtual).eq(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
-    )
+  home.validateHome().then((text) => {
+    expect(text).eq('Admin')
   })
 })
 
@@ -40,7 +38,7 @@ Cypress.Commands.add("registerEmployee", () => {
 Cypress.Commands.add("deleteEmployee", () => {
   cy.wait(5000)
   home.ValidateOptionMenu("PIM")
-  pim.searchEmployee("Test Automation")
+  pim.searchEmployee("1010")
   pim.clickSearch()
   pim.validateGrid().then((message) => {
     expect(message).to.equal("1010")

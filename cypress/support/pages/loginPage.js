@@ -21,6 +21,7 @@ export default {
 
     clickLogin() {
         click(el.btnLogin)
+        cy.wait(1500)
     },
 
     clickForgetPassword() {

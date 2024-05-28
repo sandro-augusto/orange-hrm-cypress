@@ -7,4 +7,5 @@ export const LOGIN = {
   validateErrorMess: ".oxd-input-field-error-message",
   alertError: ".oxd-alert-content-text",
   linkForgetPass: ".orangehrm-login-forgot",
+  
 }

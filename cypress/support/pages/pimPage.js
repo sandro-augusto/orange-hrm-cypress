@@ -23,10 +23,8 @@ export default {
         return get_text(el.alertSucess)
     },
 
-    searchEmployee(employeeName){
-        set_Index(el.employeeSupervisor, employeeName, 0)
-        cy.wait(2000)
-        click_index(el.optionSelect, 0)
+    searchEmployee(employeeId){
+        set_Index(el.inputFields, employeeId, 1)
     },
 
     clickSearch(){
@@ -34,12 +32,13 @@ export default {
     },
 
     validateGrid() {
-        return get_text_index(el.gridId, 1)       
+        cy.wait(1000)  
+        return get_text_index(el.gridId, 1)     
     },
 
     clickDelete() {
         click(el.btnDelete)
-        cy.wait(2000)
+        cy.wait(1000)
         click(el.btnConfirmDelete)
     },
 }

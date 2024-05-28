@@ -142,6 +142,19 @@ function get_text(el) {
     return text;
 }
 
+function get_texts(el, index1, index2) {
+    waitElement(el)
+    try {
+        return cy.get(el).then($elements => {
+            const text1 = $elements.eq(index1).text().trim();
+            const text2 = $elements.eq(index2).text().trim();
+            return [text1, text2]
+        })      
+    } catch (error) {
+        cy.log('Exception caught: ' + error.message);
+    }
+}
+
 function get_text_index(el, index) {
     waitElement(el)
     let text
@@ -202,5 +215,6 @@ function splitIn(el, index) {
 module.exports = {
     set, click, waitElement, waitElement_index, click_index, 
         clear, get_text, scrollTo, get_text_index, replaceIN, splitIn,
-            click_text, loadPage, set_Index, clickForce, click_indexForce, clear_index
+            click_text, loadPage, set_Index, clickForce, click_indexForce, clear_index,
+                get_texts
 };
